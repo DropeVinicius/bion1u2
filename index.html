@@ -1,0 +1,4672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Script do MathJax no <head> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <title>Nivelamento - Biologia Nivel 1 - Unidade 2</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .titulo-programa {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .titulo-materia {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 133px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .subtitulo-professor {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 59px;
+            color: #0058B4;
+            font-weight: lighter;
+        }
+
+        .titulo-unidade {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 60px;
+        }
+
+        .titulo-saiba-mais {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 70px;
+        }
+        /* Estilização de Bebas Neue FIM */
+
+
+        /* Estilização de Roboto INICIO */
+        .peso-1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 45px;
+        }
+
+        .texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 35px;
+        }
+
+        .sub-texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .titulo-box {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+        }
+
+        .fonte {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .citacao {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-style: italic;
+        }
+        /* Estilização de Roboto FIM */
+
+        /* Navbar styles INICIO */
+        .navbar {
+            background-color: #9F43BE;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            position: -webkit-sticky; /* Para navegadores antigos */
+            position: sticky; /* Para manter no topo durante o scroll */
+            top: 0; /* Faz com que a navbar fique no topo */
+            z-index: 10; /* Garante que o menu fique acima de outros elementos */
+            transition: background-color 0.3s ease; /* Transição suave para o efeito */
+        }
+
+        .navbar .logo img {
+            height: 50px;/* Ajuste conforme necessário */
+            width: auto;
+        }
+
+        .navbar .menu-toggle {
+            cursor: pointer;
+            font-size: 1.5em;
+            display: block;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            background-color: #9f43be;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+            z-index: 10; /* Garante que o menu esteja acima de outros elementos */
+        }
+
+        .navbar ul.show {
+            display: flex;
+        }
+
+        .navbar ul li {
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #003974; /* Cor ao passar o mouse */
+        }
+        .navbar .menu-toggle i:last-child {
+            display: none; /* Esconde o ícone de fechar inicialmente */
+        }
+        
+
+         /* Navbar styles FIM */
+
+        /* Titulo styles INICIO */
+        .titulo-intro {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .titulo-intro h1 {
+            margin: 0;
+            padding: 15px;
+        }
+        /* Titulo styles FIM */
+
+        /* Estilo da Capa do Livro INICIO*/
+        .capa-livro {
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden; /* Para evitar que o pseudoelemento saia do container */
+            border-top: 3px solid #003974;
+            border-bottom: 3px solid #003974;
+        }
+
+        .capa-livro::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://res.cloudinary.com/di4ria1pf/image/upload/v1758779110/imagem_capa_mqrrln.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.40; /* Controle da opacidade */
+            z-index: -1; /* Coloca o background atrás do conteúdo */
+        }
+
+        
+
+        .capa-livro .conteudo-capa {
+            text-align: center;
+            color: white;
+            padding: 20px; /* Espaço interno para o texto */
+        }
+
+        .capa-livro .titulo-materia {
+            font-size: 80px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 0;
+        }
+
+        .capa-livro .subtitulo-professor {
+            font-size: 40px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 10px 0 0;
+        }
+        /* Estilo da Capa do Livro FIM*/
+
+        /* Barra Superior */
+        .barra-superior {
+            background-color: #015A42; /* Cor verde escuro */
+            width: 100%;
+            padding: 15px 15px;
+            text-align: center;
+            box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+            overflow-x: hidden; /* Previne rolagem horizontal */
+        }
+
+        .barra-superior .titulo-barra {
+            font-family: 'Bebas Neue', cursive;
+            color: #FFF; /* Cor branca */
+            font-size: 50px;
+            font-weight: lighter;
+            margin: 0;
+        }
+
+        /* Conteúdo da Introdução */
+        .introducao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            overflow-x: hidden; /* Impede rolagem horizontal */
+        }
+        
+        .introducao .titulo-introducao {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: lighter;
+            color: #015A42; /* Cor verde */
+            margin: 10px auto 10px auto;
+        }
+
+        .introducao .caixa-texto {
+            width: 100%;
+            background-color: #E2F4EB; /* Verde mais claro */
+            padding: 64px 0;
+        }
+                /* Conteúdo centralizado dentro da faixa */
+        .introducao .conteudo-centralizado {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Parágrafos da introdução */
+        .introducao .conteudo-centralizado p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVIDADE SEÇÕES ACIMA*/
+        /* Capa do Livro - Responsividade */
+        @media (max-width: 768px) {
+            .capa-livro {
+                height: 70vh; /* Reduz a altura da capa */
+            }
+            .capa-livro::before {
+                background-position: center center; /* centraliza melhor no mobile */
+            }
+            .capa-livro .titulo-materia {
+                font-size: 40px; /* Reduz o tamanho do título */
+            }
+
+            .capa-livro .subtitulo-professor {
+                font-size: 24px; /* Reduz o tamanho do subtítulo */
+            }
+            .capa-livro .titulo-programa {
+                font-size: 18px;
+            }
+            .capa-livro .conteudo-capa {
+                padding: 15px; /* Ajusta o padding para telas menores */
+            }
+        }   
+            /* Seção Introdução - Responsividade */
+        @media (max-width: 768px) {
+            .barra-superior {
+                padding: 10px; /* Reduz o padding da barra */
+            }
+
+            .barra-superior .titulo-barra {
+                font-size: 1.6rem;
+                max-width: 800px;
+                margin: 10px 0;
+                padding: 0 30px;
+                text-align: left;
+            }
+
+            .introducao .titulo-introducao {
+                font-size: 2.8rem; /* Reduz o tamanho do título da introdução */
+                margin-top: 20px; /* Ajusta o espaçamento superior */
+            }
+
+            .introducao .caixa-texto {
+                padding: 20px; /* Reduz o padding da caixa de texto */
+                width: 100%; /* Ajusta a largura da caixa */
+            }
+
+            .introducao .caixa-texto p {
+                font-size: 1rem; /* Reduz o tamanho do texto */
+                line-height: 1.4;
+                margin-bottom: 10px; /* Ajusta a margem entre os parágrafos */
+            }
+            .introducao .conteudo-centralizado {
+                max-width: 800px;
+                margin: 10px 0;
+                padding: 0 40px;
+            }
+        }
+        /* Responsividade para o título da seção de Programa */
+        @media (max-width: 768px) {
+            .titulo-programa {
+                font-size: 50px; /* Ajuste do tamanho do título */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .titulo-programa {
+                font-size: 35px; /* Ajuste para telas muito pequenas */
+            }
+        }
+
+        /* Estilo base da seção */
+        .secao1 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
+        .secao1 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .secao1 .tabs-section {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        /* Estilo base da seção */
+        .secao1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #9f43be11;
+            padding: 20px;
+        }
+        .secao1 .outer-container-alt {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+       }
+        /* Imagem de topo */
+        .secao1 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao1 .faixa-verde {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao1 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao1 .titulo-verde {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao1 p {
+            font-size: 19px;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;    
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 20px;
+            }
+
+            .secao1 p {
+                font-size: 1rem;
+            }
+            .secao1 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 20px;
+            }
+
+            .secao1 p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Estilo base da seção */
+        .secao2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .secao2 .conteudo-secao {
+            width: 100%;
+            padding: 64px 0;
+            box-sizing: border-box;
+        }
+        .secao2 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+       .secao2 .outer-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+       }
+        /* Imagem de topo */
+        .secao2 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao2 .faixa-verde {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao2 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao2 .titulo-verde {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            color: #3a95a6; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao2 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao2 p {
+                font-size: 1rem;
+            }
+            .secao2 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao2 p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Acordeon styles */
+        .acordeon-container {
+            margin-top: 20px;
+            width: 90%; /* Ajuste de largura */
+            max-width: 800px; /* Limite máximo */
+        }
+
+        .acordeon {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .acordeon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3a95a6;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .acordeon-headerb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #015A42;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-headerc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #9F43BE;
+            color: #FFF;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-headerd {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #134969; /* exemplo: laranja suave */
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-content {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #3a95a6;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentb {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #015A42;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentc {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #9F43BE;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentd {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; 
+            border: 2px solid #134969; /* mesma cor da header para consistência */
+            border-radius: 0 0 10px 10px; 
+        }
+
+        .acordeon-content p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentb p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentc p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentc h4 {
+            text-align: center;
+
+        }
+        .acordeon-contentd p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .tituloacordeonverde{
+            color: #015A42;
+        }
+            /* Estilo do ícone da seta */
+        .acordeon-icon {
+            font-size: 40px;
+            transition: transform 0.3s ease; /* Para rotação suave */
+        }
+            
+            /* Rotação da seta para cima */
+        .acordeon-header.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Rotação da seta para cima */
+        .acordeon-headerb.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Rotação da seta para cima */
+        .acordeon-headerc.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+                /* Ícone giratório */
+        .acordeon-headerd.active .acordeon-icon {
+            transform: rotate(180deg);
+        }
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .acordeon-header {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+            .acordeon-headerb {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+
+            .acordeon-headerc {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+            .acordeon-headerd {
+                font-size: 20px;
+                padding: 12px;
+            }
+
+            .acordeon-contentd {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .acordeon-contentd p {
+                margin: 15px;
+            }
+        }
+        /* Responsividade para telas menores ainda (480px) */
+        @media (max-width: 480px) {
+            .acordeon-header {
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+            .acordeon-headerb {
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+
+            .acordeon-headerc {
+                font-size: 14px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+            .acordeon-headerd {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .acordeon-contentd {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .acordeon-contentd p {
+                margin: 10px;
+                font-size: 19px;
+            }
+        }
+            /* Acordeon styles FIM */
+
+            .slider-texto-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid #3a95a6;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            overflow: hidden;
+            background-color: #FFF;
+            border-radius: 8px;
+        }
+        .slider-texto-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide-texto {
+            display: none;
+            flex-shrink: 0;
+            width: 100%;
+            text-align: center;
+            word-break: keep-all;
+            white-space: normal;
+            
+        }
+
+        .slide-texto.ativo {
+            display: block;
+        }
+
+        /* Container de imagens dentro do slide */
+        .slide-imagens {
+            display: flex;
+            flex-direction: column; /* padrão: empilha vertical */
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px; /* espaçamento interno para não colar nas bordas */
+            box-sizing: border-box;
+        }
+                /* Apenas para slides com imagens maiores */
+        .slide-com-imagens-maiores .slider-img {
+            max-width: 400px;  /* aumenta o tamanho */
+            max-height: 400px;
+        }
+                /* Apenas para slides com imagens maiores */
+        .slide-com-tres-imagens .slider-img {
+            max-width: 300px;  /* aumenta o tamanho */
+            max-height: 300px;
+        }
+
+        /* Responsividade: telas menores empilham colunas */
+        @media (max-width: 768px) {
+                        /* Apenas para slides com imagens maiores */
+            .slide-com-imagens-maiores .slider-img {
+                max-width: 200px;  /* aumenta o tamanho */
+                max-height: 200px;
+            }
+                /* Apenas para slides com imagens maiores */
+            .slide-com-tres-imagens .slider-img {
+                max-width: 150px;  /* aumenta o tamanho */
+                max-height: 150px;
+            }
+        }
+
+        /* Apenas slides que possuem colunas */
+        .slide-imagens.colunas {
+            display: flex;
+            flex-direction: row; /* colunas lado a lado */
+            justify-content: center; /* centraliza colunas no slide */
+            gap: 20px; /* espaço entre colunas */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Colunas individuais */
+        .coluna-imagem {
+            display: flex;
+            flex-direction: column; /* empilha imagens dentro da coluna */
+            gap: 10px; /* espaço entre imagens */
+            align-items: center; /* centraliza horizontalmente */
+            justify-content: center; /* centraliza verticalmente dentro da coluna */
+            flex: 1; /* cada coluna ocupa largura proporcional igual */
+        }
+
+        /* Responsividade: telas menores empilham colunas */
+        @media (max-width: 768px) {
+            .slide-imagens.colunas {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        /* Imagens zoomable pequenas */
+        .slider-img {
+            max-width: 250px; /* ajuste o tamanho desejado */
+            max-height: 250px;
+            cursor: pointer; /* indica que pode ser clicada */
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .slider-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .titulo-texto {
+            color: #b9e5a9;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+        }
+
+        .conteudo-texto {
+            font-size: 16px !important;
+            color: #333 !important;
+            font-family: 'Roboto', sans-serif !important;
+            width: 100%;
+            margin: 0 auto;
+            word-break: normal;
+            white-space: normal;
+            text-align: center !important;
+        }
+        .titulo-texto,
+        .conteudo-texto {
+            word-break: break-word;
+            white-space: normal;
+        }
+        .seta-texto {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            color: #3a95a6;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .seta-texto.esquerda {
+            left: 0;
+        }
+
+        .seta-texto.direita {
+            right: 0;
+        }
+
+    @media (max-width: 768px) {
+        .titulo-texto {
+            font-size: 20px;
+        }
+
+        .conteudo-texto {
+            font-size: 18px;
+        }
+
+        .seta-texto {
+            font-size: 24px;
+        }
+    }
+        .slider-texto-indicadores {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .dot-texto {
+            height: 12px;
+            width: 12px;
+            margin: 0 6px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot-texto.ativo {
+            background-color: #3a95a6;
+        }
+        /* ------------------- */
+        /* TEMAS DE COR        */
+        /* ------------------- */
+
+        /* Tema verde */
+        .tema-verde {
+            border-color: #92d678;
+        }
+        .tema-verdeborda {
+            border-color: #015A42 !important;
+        }
+        .tema-verde .seta-texto {
+            color: #92d678;
+        }
+        .tema-verde .dot-texto.ativo {
+            background-color: #92d678;
+        }
+
+        /* Tema roxo */
+        .tema-roxo {
+            border-color: #015A42;
+        }
+        .tema-roxo .seta-texto {
+            color: #015A42;
+        }
+        .tema-roxo .dot-texto.ativo {
+            background-color: #015A42;
+        }
+
+        /* Tema roxo */
+        .tema-green {
+            border-color: #9F43BE;
+        }
+        .tema-green .seta-texto {
+            color: #9F43BE;
+        }
+        .tema-green .dot-texto.ativo {
+            background-color: #9F43BE;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .seta-texto { font-size: 24px; }
+            .conteudo-texto { font-size: 18px; }
+        }
+
+        .tabs-container {
+            width: 600px;
+        }
+
+        /* Abas */
+        .tab-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+        }
+
+        .tab-button {
+            flex: 1;
+            background-color: #9F43BE;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button:not(:last-child) {
+            border-right: 2px solid white;
+        }
+
+        .tab-button:hover {
+            background-color: #b95cd5;
+        }
+
+        .tab-button.active {
+            background-color: white;
+            color: #9F43BE;
+            border-bottom: none;
+            font-weight: 700;
+        }
+
+        /* Conteúdo */
+        .tab-content {
+            border: 2px solid #9F43BE;
+            border-radius: 10px;
+            background-color: white;
+            padding: 40px;
+            display: none;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ===========================
+        🔹 Responsividade adicionada
+        =========================== */
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            .tabs-container {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .tab-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .tab-button {
+                flex: 1 1 45%;
+                font-size: 14px;
+                padding: 8px 4px;
+                border-radius: 8px;
+            }
+
+            .tab-content {
+                padding: 25px;
+                font-size: 15px;
+            }
+        }
+
+        /* Celulares */
+        @media (max-width: 480px) {
+            .tabs-container {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .tab-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .tab-button {
+                flex: none;
+                width: 100%;
+                font-size: 14px;
+                padding: 10px;
+                border-radius: 8px;
+                border-right: none;
+            }
+
+            .tab-content {
+                padding: 20px;
+                font-size: 14px;
+            }
+        }
+                /* Tema verde exclusivo para esses tabs */
+        .tabs-container.tema-verde {
+            --tab-color-default: #015A42;
+            --tab-color-active: #01332d;
+            --tab-color-hover: #017155;
+            --tab-text-color: #ffffff;
+            --tab-border-color: #015A42;
+        }
+
+        /* Aplica as variáveis apenas dentro do tema */
+        .tabs-container.tema-verde .tab-button {
+            background-color: var(--tab-color-default);
+            color: var(--tab-text-color);
+        }
+
+        .tabs-container.tema-verde .tab-button:hover {
+            background-color: var(--tab-color-hover);
+        }
+
+        .tabs-container.tema-verde .tab-button.active {
+            background-color: white;
+            color: var(--tab-color-default);
+            border-bottom: none;
+                border: 2px solid;
+        }
+
+        .tabs-container.tema-verde .tab-content {
+            border: 2px solid var(--tab-border-color);
+        }
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 600px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 180px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Frente */
+        .flip-card-front {
+            background-color: #9F43BE;
+            color: white;
+            font-weight: bold;
+            border: 2px solid #9F43BE;
+        }
+
+        /* Verso */
+        .flip-card-back {
+            background-color: white;
+            color: #9F43BE;
+            border: 2px solid #9F43BE;
+            transform: rotateY(180deg);
+            font-weight: 500;
+        }
+        /* Responsividade aprimorada */
+        @media (max-width: 768px) {
+            .cards-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            }
+
+            .flip-card {
+            aspect-ratio: 1 / 1.2;
+            }
+
+            .flip-card-front,
+            .flip-card-back {
+            font-size: 0.9rem;
+            padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cards-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            }
+
+            .flip-card {
+            aspect-ratio: 1 / 1.3;
+            }
+
+            .flip-card-front,
+            .flip-card-back {
+            font-size: 0.85rem;
+            padding: 8px;
+            }
+        }
+
+        /* === Temas reutilizáveis para os flip-cards === */
+
+            /* Tema Verde */
+            .tema-verde .flip-card-front {
+                background-color: #015A42;
+                border-color: #015A42;
+                color: #FFFFFF;
+            }
+
+            .tema-verde .flip-card-back {
+                background-color: #FFFFFF;
+                border-color: #015A42;
+                color: #015A42;
+            }
+            /* --- Centraliza o 3º card apenas quando houver exatamente 3 cards --- */
+        /* Seleciona o 3º card e garante que ele seja o último (ou seja, existem exatamente 3) */
+        .cards-container > .flip-card:nth-child(3):last-child {
+            grid-column: 1 / -1;   /* ocupa as duas colunas do grid */
+            justify-self: center;  /* centraliza dentro da área que ocupa */
+            max-width: 280px;      /* controla largura para não esticar — ajuste se quiser */
+            width: 100%;           /* mantém o comportamento responsivo */
+        }
+
+        /* Ajuste do gap quando o 3º card ocupa toda a linha (opcional) */
+        .cards-container > .flip-card:nth-child(3):last-child + .flip-card {
+            /* regra só por segurança — não deve haver elementos depois, pois é o last-child */
+        }
+
+        /* Responsividade: mantemos o mesmo comportamento em telas menores */
+        @media (max-width: 768px) {
+            .cards-container > .flip-card:nth-child(3):last-child {
+                max-width: 45%; /* menor para telas menores — ajuste conforme necessário */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cards-container > .flip-card:nth-child(3):last-child {
+                max-width: 90%; /* em telas muito estreitas deixa ficar quase full-width */
+            }
+        }
+         /* === Bloco de Figura (sem slider) === */
+        .bloco-figura {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid #9F43BE;
+            background-color: #fff;
+            border-radius: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+                /* Apenas para o bloco da Figura 20 */
+        .bloco-figura.figura-20 {
+            border: 2px solid #015A42;
+        }
+        /* Título */
+        .bloco-figura .titulo-figura {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: normal; /* remove o negrito */
+            font-style: normal;  /* caso também queira evitar itálico */
+        }
+        .bloco-figura .figura::after {
+            content: " "; /* espaço */
+            white-space: pre; /* garante que o espaço seja preservado */
+        }
+        .bloco-figura .titulo-figura .figura {
+            color: #015A42; /* verde padrão */
+        }
+
+        /* Imagem centralizada */
+        .bloco-figura .figura-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .bloco-figura .figura-container img {
+            max-width: 90%;
+            height: auto;
+        }
+
+        /* Fonte */
+        .bloco-figura .fonte-imagem {
+            font-size: 12px;
+            color: #555;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Descrição */
+        .bloco-figura .descricao-figura {
+            font-size: 14px;
+            color: #333;
+            text-align: justify;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .bloco-figura {
+                padding: 15px;
+            }
+            .bloco-figura .titulo-figura {
+                font-size: 18px;
+            }
+            .bloco-figura .descricao-figura {
+                font-size: 13px;
+            }
+        }
+
+        /* === Bloco Horizontal === */
+        .bloco-figura-horizontal {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid #9F43BE;
+            background-color: #fff;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Título */
+        .bloco-figura-horizontal .titulo-figura {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: left;
+            font-weight: normal; /* remove o negrito */
+            font-style: normal;  /* caso também queira evitar itálico */
+        }
+        .bloco-figura-horizontal .figura::after {
+            content: " "; /* espaço */
+            white-space: pre; /* garante que o espaço seja preservado */
+        }
+        .bloco-figura-horizontal .titulo-figura .figura {
+            color: #015A42; /* verde padrão */
+        }
+
+        /* Layout horizontal */
+        .conteudo-horizontal {
+            display: flex;
+            align-items: center; /* centraliza verticalmente imagem e texto */
+            justify-content: center;
+            flex-wrap: wrap; /* quebra em telas menores */
+        }
+
+        /* Imagem */
+        .lado-imagem {
+            flex: 1 1 41%;
+            text-align: center !important;
+        }
+
+        .lado-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 8px;
+        }
+
+        /* Fonte abaixo da imagem */
+        .lado-imagem .fonte-imagem {
+            font-size: 10px !important;
+            color: #555;
+            text-align: justify !important;
+            margin-left: 5px;
+        }
+
+        /* Texto */
+        .lado-texto {
+            flex: 1 1 55%;
+        }
+
+        .lado-texto .paragrafo-figura {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        .lado-texto .descricao-figura {
+            font-size: 14px;
+            color: #333;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .conteudo-horizontal {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lado-imagem, .lado-texto {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+
+            .lado-imagem .fonte-imagem {
+                text-align: center;
+                margin-left: 0;
+            }
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: grab;
+            overflow: hidden;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* garante que se ajuste à tela inicialmente */
+            transition: transform 0.2s ease;
+            transform-origin: center center;
+        }
+        .lightbox-hint {
+            position: absolute;
+            bottom: 20px;
+            color: #fff;
+            font-size: 14px;
+            opacity: 0.8;
+            font-family: sans-serif;
+            text-align: center;
+            animation: fadeOut 4s forwards; /* some sozinho */
+        }
+        .zoomable {
+            cursor: zoom-in; /* ícone de lupa ao passar o mouse */
+            transition: transform 0.2s ease;
+        }
+
+        .zoomable:hover {
+            transform: scale(1.02); /* leve efeito de destaque no hover */
+        }
+        @keyframes fadeOut {
+            0% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { opacity: 0; }
+        }
+                /* Animação suave */
+                @keyframes zoomIn {
+                    from { transform: scale(0.7); opacity: 0; }
+                    to { transform: scale(1); opacity: 1; }
+                }
+                
+
+    /* Retângulo de fundo */
+        .background-section {
+            background-color: #015A42; /* Cor de fundo verde */
+            border-radius: 20px; /* Bordas arredondadas */
+            min-height: 450px; /* Altura mínima */
+            width: 90%; /* Largura ajustada à estrutura */
+            max-width: 800px; /* Limite máximo */
+            height: auto; /* Altura do retângulo */
+            margin: 50px auto; /* Espaçamento da seção acima e centralização */
+            position: relative; /* Define o contexto de empilhamento */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .background-section {
+                width: 85%;
+                margin: 50px auto;
+                padding: 20px;
+            }
+        }
+        
+        /* Retângulo transparente (sobreposição) */
+        .transparent-section {
+            background-color: rgba(255, 255, 255, 0.822); /* Tom verde com transparência */
+            border: 2px solid #015A42; /* Borda sólida verde */
+            border-radius: 20px; /* Bordas arredondadas */
+            width: calc(100% - 40px); /* Reduz tamanho para acomodar margens */
+            height: 100%;
+            position: absolute; /* Define posicionamento relativo */
+            top: 20px;
+            left: 20px; 
+            z-index: 1; /* Garante que o retângulo fique sobre o fundo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+            display: flex; /* Usamos flexbox para alinhar o conteúdo */
+            flex-direction: column; /* Alinha os elementos verticalmente */
+            justify-content: space-evenly; /* Distribui espaço uniformemente */
+            align-items: center; /* Alinha o conteúdo à esquerda */
+            text-align: center; /* Centraliza o texto */
+        }
+        
+        
+                /* Responsividade - Ajuste da largura da transparent-section para telas menores */
+        @media (max-width: 768px) {
+            .transparent-section {
+                width: 90%; /* Diminui a largura da sobreposição */
+                left: 5%; /* Ajusta o posicionamento para centralizar */
+                right: 5%; /* Garante que o elemento ocupe menos espaço na tela */
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        /* Círculo verde */
+        .circle-green {
+            position: absolute;
+            top: -30px; /* Distância do topo */
+            left: -30px; /* Distância da esquerda */
+            background-color: #015A42; /* Cor verde */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo */
+            height: 120px; /* Tamanho do círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Garantir que fique sobre o fundo */
+        }
+
+        /* Círculo branco sobre o verde */
+        .circle-white {
+            position: absolute;
+            top: -4px; /* Eleva o círculo branco para cima */
+            left: -5px; /* Centraliza o círculo branco sobre o verde */
+            background-color: white; /* Cor branca */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo branco */
+            height: 120px; /* Tamanho do círculo branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3; /* Coloca o círculo branco sobre o verde */
+        }
+
+        /* Estilizando o ícone dentro do círculo branco */
+        .circle-white i {
+            font-size: 80px; /* Tamanho do ícone */
+            color: #015A42; /* Cor verde para o ícone */
+        }
+        /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .circle-green, .circle-white {
+                width: 60px; /* Diminui o tamanho */
+                height: 60px; /* Diminui o tamanho */
+                top: -5px; /* Ajusta o posicionamento */
+                left: -5px; /* Ajusta o posicionamento */
+            }
+
+            .circle-white i {
+                font-size: 40px; /* Reduz o ícone */
+            }
+        }
+              /* Retângulo de fundo */
+        .background-section2 {
+            background-color: #015A42 !important;
+            border-radius: 20px !important;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+            padding: 30px; /* adiciona espaçamento interno */
+            box-sizing: border-box;
+            height: auto; /* deixa a altura fluir conforme o conteúdo */
+            min-height: unset; /* remove altura mínima fixa */
+        }
+               
+        
+                    /* Retângulo transparente */
+            .transparent-section2 {
+                background-color: rgba(255, 255, 255, 0.9);
+                border: 2px solid #015A42;
+                border-radius: 20px;
+                padding: 20px;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative; /* relativo em vez de absolute */
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px; /* espaço natural entre elementos */
+            }
+        
+                @media (max-width: 768px) {
+            .background-section2 {
+                width: 95%;
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            .transparent-section2 {
+                padding: 15px;
+                gap: 5px;
+            }
+        }
+        
+        /* Círculo verde */
+        .circle-green2 {
+            position: absolute;
+            top: -30px; /* Distância do topo */
+            left: -30px; /* Distância da esquerda */
+            background-color: #015A42; /* Cor verde */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo */
+            height: 120px; /* Tamanho do círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Garantir que fique sobre o fundo */
+        }
+
+        /* Círculo branco sobre o verde */
+        .circle-white2 {
+            position: absolute;
+            top: -4px; /* Eleva o círculo branco para cima */
+            left: -5px; /* Centraliza o círculo branco sobre o verde */
+            background-color: white; /* Cor branca */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo branco */
+            height: 120px; /* Tamanho do círculo branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3; /* Coloca o círculo branco sobre o verde */
+        }
+
+        /* Estilizando o ícone dentro do círculo branco */
+        .circle-white2 i {
+            font-size: 80px; /* Tamanho do ícone */
+            color: #015A42; /* Cor verde para o ícone */
+        }
+        /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .circle-green2, .circle-white2 {
+                width: 60px; /* Diminui o tamanho */
+                height: 60px; /* Diminui o tamanho */
+                top: -5px; /* Ajusta o posicionamento */
+                left: -5px; /* Ajusta o posicionamento */
+            }
+
+            .circle-white2 i {
+                font-size: 40px; /* Reduz o ícone */
+            }
+        }
+
+        .learn-more-title {
+            color: #015A42; /* Cor verde */
+            font-size: 50px; /* Tamanho do título */
+            font-weight: lighter;
+            text-align: left;
+            font-family: 'Bebas Neue', sans-serif; /* Fonte Bebas Neue */
+            margin: -25px 0;
+            width: 80%; /* Ocupa toda a largura disponível */
+        }
+        .learn-more-paragraph {
+            font-family: 'Roboto', sans-serif; /* Fonte Roboto */
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.4; /* Espaçamento entre linhas */
+            color: #000; /* Cor verde */
+            margin: 0px; /* Reduz margens */
+            width: 90%; /* Ocupa toda a largura disponível */
+            word-wrap: break-word;
+        }
+         .learn-more-link {
+            font-family: 'Roboto', sans-serif; 
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.4; 
+            color: #FFF; /* cor do texto */
+            margin: 0px; 
+            width: 90%; 
+            word-wrap: break-word;
+            padding: 5px;
+            background-color: #669e87;
+            cursor: pointer; /* mostra a mãozinha ao passar o mouse */
+            text-decoration: none; /* opcional: simula link */
+            transition: background-color 0.3s, color 0.3s; /* efeito ao passar o mouse */
+        }
+
+
+        .centered-paragraph {
+            text-align: center; /* Centraliza o texto horizontalmente */
+            margin: -5px 0; /* Ajusta a margem para uniformidade */
+            font-size: 17px; /* Mantém o tamanho consistente */
+            line-height: 1.4; /* Controla o espaçamento entre linhas */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .learn-more-title {
+                font-size: 35px; /* Ajusta o tamanho do título */
+                text-align: left;
+            }
+
+            .learn-more-paragraph {
+                font-size: 15px; /* Ajusta o tamanho do texto */
+                line-height: 1.4;
+                text-align: justify; /* Centraliza o texto */
+                margin: 5px 0; /* Reduz margens */
+            }
+        }
+            .outer-background {
+                background-color: #fff; /* Cor de fundo para o contêiner externo */
+        }
+        .play-icon {
+            display: flex; /* Flexbox para centralizar o conteúdo */
+            justify-content: center;
+            align-items: center;
+            background-color: #015A42; /* Fundo verde */
+            color: #FFF; /* Ícone branco */
+            width: 90px; /* Largura do botão */
+            height: 55px; /* Altura do botão */
+            border-radius: 13px;
+            font-size: 40px; /* Tamanho do ícone */
+            cursor: pointer; /* Cursor de clique */
+            transition: transform 0.3s ease; /* Efeito de transição */
+        }
+
+        .play-icon:hover {
+            transform: scale(1.1); /* Aumenta levemente no hover */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .play-icon {
+                width: 60px; /* Diminui a largura */
+                height: 40px; /* Diminui a altura */
+                font-size: 25px; /* Diminui o tamanho do ícone */
+            }
+        }
+        /* Modal - Oculto por padrão */
+        .video-modal {
+            display: none; /* Inicialmente o modal está oculto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro transparente */
+            z-index: 1000; /* Garantir que o modal fique acima de outros conteúdos */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Conteúdo do modal (onde ficará o vídeo) */
+        .video-content {
+            position: relative;
+            background-color: #015A42;
+            border-radius: 10px;
+            padding: 20px;
+        }
+         
+        /* Responsividade - Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            .video-content {
+                max-width: 100%; /* Maximize a largura do modal no mobile */
+                padding: 10px;
+            }
+
+            .video-content iframe {
+                width: 100%; /* O iframe ocupará toda a largura disponível */
+                height: 56.25vw; /* Isso mantém a proporção de 16:9 */
+                max-height: 80vh; /* Evita que o vídeo ultrapasse a tela */
+                border-radius: 10px;
+            }
+        }
+
+        /* Botão de fechar */
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 40px;
+            color: #FFF;
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .close-btn:hover {
+            transform: scale(1.2); /* Aumenta levemente no hover */
+            color: #FF0000; /* Muda a cor para vermelho no hover */
+        }
+        /* Wrapper para manter proporção responsiva */
+
+        /* Estilo para os tópicos de texto */
+            .topico-texto {
+                width: 90%;
+                max-width: 800px;
+                padding: 10px;
+            }
+
+            /* Remove estilo padrão da lista e adiciona recuo para o ícone */
+            .topico-texto ul {
+                list-style: none; /* Remove marcadores padrão */
+                padding-left: 20px; /* Espaço para o ícone personalizado */
+            }
+
+            .topico-texto ul li {
+                position: relative; /* Para posicionar o ::before */
+                margin-bottom: 10px;
+                line-height: 1.6;
+                padding-left: 25px; /* Espaço para a seta */
+                font-size: 16px;
+                font-family: 'Roboto', sans-serif;
+                color: #333;
+            }
+
+
+                        
+            .topico-texto ul li::before {
+                content: '▸'; /* A seta */
+                position: absolute;
+                left: 0; /* Posição da seta */
+                color: #333; /* Cor da seta */
+                font-weight: bold;
+            }
+
+            /* Texto dentro do destaque */
+            .topico-destaque {
+                font-size: 18px;
+                font-weight: 400;
+                display: block;
+            }
+
+            /* Responsividade */
+            @media (max-width: 768px) {
+                .topico-texto {
+                    padding: 15px;
+                }
+
+                .topico-texto ul li {
+                    font-size: 14px;
+                }
+
+                .topico-destaque {
+                    font-size: 16px;
+                }
+            }
+
+            .quadro-lista {
+            border: 2px solid #015A42;
+            border-radius: 6px;
+            padding: 20px 40px;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+        }
+
+        .quadro-lista ul {
+            list-style: none; /* Remove bullets padrão */
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .quadro-lista li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Adiciona a seta antes do item */
+        .quadro-lista li::before {
+            content: "►"; /* seta */
+            position: absolute;
+            left: 0;
+            color: #333;
+            font-size: 18px;
+            top: 0;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .quadro-lista {
+                padding: 12px 15px;
+            }
+            .quadro-lista li {
+                font-size: 14px;
+                padding-left: 20px;
+            }
+            .quadro-lista li::before {
+                font-size: 16px;
+            }
+        }
+
+        /* Container centralizado com borda verde */
+        .podcast-container {
+            border: 2px solid #015A42;
+            padding: 30px 100px;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        /* Título em verde */
+        .podcast-title {
+            color: #015A42;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        .download-section {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+            }
+            .download-btn {
+                background-color: #9F43BE;
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+                font-weight: bold;
+                margin-top: 80px;
+            }
+
+            .download-btn i {
+                font-size: 18px;
+            }
+
+            .download-btn:hover {
+                background-color: #7D3598;
+            }
+        /* ===== Seções de Conclusão e Referências ===== */
+.conclusao, .referencias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.conclusao {
+    background-color: #E2F4EB; /* fundo suave */
+}
+
+.referencias {
+    background-color: #FFF;
+    border-top: 3px solid #015A42;
+    border-bottom: 3px solid #015A42;
+}
+
+/* Títulos */
+.titulo-conclusao, .titulo-referencias {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+    font-weight: lighter;
+    color: #015A42;
+    margin: 10px auto 20px auto;
+    text-align: left; /* garante centralização em desktop */
+}
+
+/* Caixas de texto */
+.conclusao .caixa-texto, 
+.referencias .caixa-texto {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Parágrafos */
+.conclusao .caixa-texto p,
+.referencias .caixa-texto p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Cores de texto diferentes */
+.conclusao .caixa-texto p {
+    color: #333;
+}
+.referencias .caixa-texto p {
+    color: #000;
+}
+
+/* Links em referências */
+.referencias .caixa-texto a {
+    word-break: break-all;
+    color: #015A42;
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .titulo-conclusao, .titulo-referencias {
+        font-size: 2rem;
+    }
+    .conclusao .caixa-texto p,
+    .referencias .caixa-texto p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    .conclusao .caixa-texto, 
+    .referencias .caixa-texto {
+        max-width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-conclusao, .titulo-referencias {
+        font-size: 1.8rem;
+    }
+    .conclusao .caixa-texto, 
+    .referencias .caixa-texto {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+        /* Estilização do rodapé */
+        .footer {
+            border-top: 3px solid #015A42; /* Borda superior */
+            background-color: #FFFFFF; /* Fundo branco */
+            text-align: center; /* Centralizar texto */
+            padding: 15px 0; /* Espaçamento interno */
+            box-sizing: border-box; /* Inclui padding nas dimensões */
+        }
+
+        .footer p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #015A42; /* Cor do texto */
+            margin: 0; /* Remove espaçamento externo */
+        }
+        /* Texto descritivo */
+        .footer .fonte-menor {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: #555; /* Cor neutra */
+            line-height: 1.5; /* Espaçamento entre linhas */
+            display: block; /* Garante quebra para nova linha */
+            margin-top: 10px; /* Espaço entre o texto e o divisor */
+        }
+                /* Divisor */
+        .footer-divider {
+            border: none; /* Remove borda padrão */
+            height: 1px; /* Altura da linha */
+            background-color: #015A42; /* Cor da linha */
+            margin: 10px auto; /* Espaçamento vertical */
+            width: 80%; /* Define a largura do divisor */
+            opacity: 0.5; /* Reduz opacidade para suavizar */
+        }
+                /* Ajustes do rodapé para mobile */
+        @media (max-width: 480px) {
+            .footer p {
+                font-size: 15px; /* Ajusta o tamanho da fonte */
+            }
+            .footer .fonte-menor {
+                font-size: 12px; /* Reduz tamanho da fonte */
+                line-height: 1.4; /* Ajusta o espaçamento */
+            }
+            .footer-divider {
+                width: 100%; /* Ajusta largura do divisor no mobile */
+            }
+        }
+        .logo-final {
+            background-color: #b9e5a92c;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 3px solid #015A42;
+        }
+
+        .logo-final img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        /* Nova seção com os títulos ocupando a tela inteira */
+        .ficha-titulos {
+            background-color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .ficha-titulos h2,
+        .ficha-titulos h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            font-size: 40px;
+            color: #0058B4;
+            margin: 10px 0;
+        }
+
+        /* Mantemos a ficha técnica como estava */
+        .ficha-tecnica {
+            background-color: #FFF;
+            padding: 60px 20px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        .ficha-tecnica p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px auto;
+            max-width: 700px;
+        }
+
+        .ficha-tecnica strong {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .paragraforeduzido {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://drive.google.com/thumbnail?id=1iZTd5_tOqqVTFtrgbqdKazN1J1Yk-PuE" alt="Logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="bx bx-menu"></i>
+            <i class="bx bx-x" style="display: none;"></i> <!-- Ícone de fechar menu -->
+        </div>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#secao1">Tópico 1</a></li>
+            <li><a href="#secao2">Tópico 2</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#referencias">Refs Bibliográficas</a></li>
+        </ul>
+    </div>
+    
+    
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    
+    <!-- Capa do Livro -->
+    <section id="capa-livro" class="capa-livro">
+        <div class="borda superior"></div>
+        <div class="conteudo-capa">
+            <h1 class="titulo-programa">PROGRAMA DE ATUALIZAÇÃO em fundamentos de</h1>
+            <h1 class="titulo-materia">BIOLOGIA - NÍVEL 1</h1>
+            <h2 class="subtitulo-professor">Profª. Drª. Laira LÚcia Damasceno de Oliveira</h2>
+            <h2 class="subtitulo-professor">PROFª me. ELISABETH conceição sena gonçalves</h2>
+        </div>
+        <div class="borda inferior"></div>
+    </section>
+    
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    
+    
+    <!-- Seção Introdução -->
+    <section id="introducao" class="introducao">
+        <!-- Barra Superior -->
+        <div class="barra-superior">
+            <h1 class="titulo-barra">UNIDADE 2 | Macromoléculas e a constituição celular</h1>
+        </div>
+    
+        <!-- Conteúdo -->
+        <div class="caixa-texto">
+            <div class="conteudo-centralizado">
+                <h1 class="titulo-introducao">INTRODUÇÃO</h1>
+                <p>Olá, estudante!</p>
+                <p>
+                    Você já parou para pensar do que somos feitos? Não apenas em termos filosóficos, mas no sentido mais
+                    literal e biológico possível. Nosso corpo, assim como o de todos os seres vivos, é composto por elementos
+                    e substâncias que formam estruturas complexas, organizadas de maneira tão precisa que garantem a
+                    existência da vida. Nesta etapa dos seus estudos, vamos conversar sobre os constituintes químicos das
+                    células, com atenção especial às macromoléculas e ao papel insubstituível da água. Você vai perceber
+                    como tudo está interligado, desde a menor partícula até os tecidos e órgãos que nos mantêm ativos,
+                    sensíveis e em constante transformação.
+                </p>
+                <p>
+                    Talvez você imagine que conteúdos como esse pertencem apenas aos laboratórios ou às aulas de biologia
+                    do ensino médio, mas a verdade é que eles estão muito mais próximos da nossa rotina do que se imagina.
+                    Cada alimento que você consome, cada gota de suor, cada célula que se renova, tudo isso envolve
+                    macromoléculas que participam de processos vitais, como transporte de nutrientes, proteção das estruturas
+                    celulares e produção de energia. Ao compreender como essas substâncias atuam e se organizam, você
+                    ganha não apenas conhecimento, mas ferramentas para interpretar melhor o funcionamento do seu próprio
+                    corpo e o que acontece ao seu redor.
+                </p>
+                <p>
+                    Vamos, então, percorrer juntos esse conteúdo observando as características, as funções e os exemplos das
+                    principais moléculas que compõem os seres vivos. Falaremos da água e de suas propriedades únicas, dos
+                    carboidratos e da sua importância energética e estrutural, das proteínas e suas diversas atuações dentro
+                    das células, dos lipídios e sua relação com as membranas e o armazenamento, além dos ácidos nucleicos
+                    que guardam e transmitem nossa herança biológica. A proposta aqui é construir, com clareza e diálogo, uma
+                    compreensão ampla e útil, conectando teoria e prática de maneira significativa para sua formação.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="secao1" id="secao1">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                1. A água e a função biológica
+            </h1>
+        </div>
+
+        <p>
+            A água é elemento de vital importância. Lembremos que a superfície de nosso planeta tem mais água do
+            que terra, já que sua composição supera os 70% de água. Porém, desse total, menos de 3% é água doce,
+            constituídos em estado líquido, por exemplo, em rios e lagos, infiltrados em solo e rochas e nas nuvens,
+            e em estado sólido. Estima-se que 2,6% do volume total sejam de água doce, e, desse índice, 1,8% em
+            estado sólido e 0,96% em águas subterrâneas (Infoescola, 2020; Mundo Educação, 2020).
+        </p>
+
+        <p>
+            O primeiro organismo vivo do planeta Terra surgiu no ambiente aquoso, de forma que o processo evolutivo
+            que deu origem a novos organismos foi moldado por esse ambiente. A água, portanto, apresenta papel
+            fundamental no metabolismo das células, com propriedades únicas e a sua quantidade varia entre os
+            diferentes tecidos e órgãos e de acordo com a idade. Pessoas mais jovens possuem quantidade maior
+            de água em seus tecidos e órgãos em comparação aos idosos (Brasil Escola, 2020; Toda Biologia, 2020).
+            Portanto, a quantidade de água é influenciada pela atividade das células, pela idade do organismo e a
+            espécie à qual ele pertence. Clique nos botões para visualizar fatores reguladores:
+        </p>
+
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    TAXA METABÓLICA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Organismos com metabolismo mais acelerado demandam maior volume hídrico.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    DENSIDADE CELULAR
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Tecidos mais ativos bioquimicamente concentram mais água.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADAPTAÇÃO EVOLUTIVA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Certas espécies desenvolvem retenção hídrica em ambientes áridos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <p>
+            Os animais também apresentam água em sua composição. As medusas, por exemplo, são constituídas
+            por aproximadamente 98% de água e, talvez por isso, sejam conhecidas por água-viva. Alimentos
+            também são compostos por água: a banana-prata tem aproximadamente 71%, a cenoura crua,
+            aproximadamente 90% e a melancia, 92% de água. Nas plantas, a água auxilia no transporte dos
+            nutrientes necessários à sua sobrevivência. Clique nas setas para acessar relações específicas:
+        </p>
+
+        <br>
+        <section class="slider-texto-container tema-green" data-slider-id="2">
+            <!-- conteúdo do slider 2 -->
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <p class="conteudo-texto">
+                        Organismos com alto teor hídrico são mais suscetíveis à desidratação ambiental.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Frutas ricas em água geralmente pertencem a grupos adaptados a regiões tropicais.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        A seiva bruta circula com eficiência graças ao transporte hídrico capilar.
+                    </p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+            </div>
+        </section>
+        <br>
+
+        <p>
+            O corpo humano adulto é composto por cerca de 65% de água, enquanto o de um bebê pode chegar
+            até 80% de água em sua composição. Nossos órgãos também levam água em sua constituição, como o
+            coração, com 79%; rins, com 70%; pulmões, com 83%; cérebro, com 85%; e fígado, com 86% (Infoescola,
+            2020; Mundo Educação, 2020). Clique nas abas para explorar contrastes fisiológicos:
+        </p>
+        <br>
+        <div class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="tab1">Idoso x bebê</button>
+                <button class="tab-button" data-tab="tab2">Massa magra x gordura</button>
+                <button class="tab-button" data-tab="tab3">Homens x mulheres</button>
+            </div>
+        
+            <div id="tab1" class="tab-content active">
+                O envelhecimento reduz a retenção hídrica devido à perda de massa celular ativa.
+            </div>
+        
+            <div id="tab2" class="tab-content">
+                Tecidos musculares armazenam mais água do que tecidos adiposos.
+            </div>
+        
+            <div id="tab3" class="tab-content">
+                Diferenças hormonais e corporais influenciam a proporção total de água.
+            </div>
+        </div>
+        <br>
+        <p>
+            A água é conhecida por apresentar diversas funcionalidades no corpo humano, exemplificando: favorece a
+            realização de reações químicas essenciais à fisiologia do corpo, atuando como solvente, e é responsável
+            pelo transporte de oxigênio, nutrientes e sais minerais para todas as células. O plasma, um dos componentes
+            do sangue, e as células constituem-se por água (Toda Matéria, 2020).
+        </p>
+        <p>
+            Esse elemento, inclusive, regula a temperatura corporal, a produção do suor, que libera calor por meio da
+            evaporação, equilibrando a temperatura do corpo. Também atua em reações enzimáticas, facilitando, por
+            exemplo, a digestão, além de eliminar substâncias tóxicas por meio da urina - que é composta por 95%
+            de água (Mundo Educação, 2020).
+        </p>
+        <p>
+            A água forma as lágrimas, que respondem pela hidratação e limpeza das córneas e pela lubrificação das
+            articulações, evitando o atrito entre os ossos. Há água nas membranas que envolvem o sistema nervoso
+            central, as meninges, e no líquido que envolve o embrião, chamado líquido amniótico. Clique nos cards
+            para conhecer funções especializadas:
+        </p>
+        <br>
+        <div class="cards-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">ESTABILIDADE OCULAR</div>
+                    <div class="flip-card-back">A lágrima forma uma película protetora contra poeira e agentes irritantes.</div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">MOBILIDADE ARTICULAR</div>
+                    <div class="flip-card-back">O fluido sinovial reduz o desgaste em articulações de alta rotação.</div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">PROTEÇÃO NEURAL</div>
+                    <div class="flip-card-back">O (líquido cerebrospinal) amorteca choques e variações de pressão.</div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">AMBIENTE EMBRIONÁRIO</div>
+                    <div class="flip-card-back">O líquido amniótico regula pH, temperatura e defesa imunológica.</div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura tema-verde">
+        
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 1</strong>.</span> Infográfico representativo sobre a água no organismo.</h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761158708/figura_01_hms2v7.png"
+                    alt="Infográfico representativo sobre a água no organismo.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: macrovector / Freepik.</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta um infográfico colorido e ilustrado com o título “Infográfico sobre a água no organismo”, que reúne
+                informações sobre o papel e a distribuição da água no corpo humano. Ao centro, há a silhueta de um corpo masculino
+                composta por gotas d’água, com
+                a indicação de que o organismo é composto por sessenta e cinco por cento de água. Ao lado esquerdo, há ícones
+                representando os benefícios da água
+                para a saúde, como lubrificação, regulação da temperatura corporal, auxílio na conversão de alimentos em energia,
+                participação no processo digestivo
+                e manutenção da saúde da pele. À direita, aparece uma representação gráfica do consumo ideal de água por dia, sugerindo
+                a ingestão de oito copos (o
+                equivalente a dois litros). Abaixo, um quadro mostra a porcentagem de água em diferentes órgãos: cérebro com oitenta e
+                cinco por cento, sangue com
+                noventa por cento, fígado com oitenta e seis por cento, pulmões com oitenta e três por cento, coração com setenta e três
+                por cento, rins com setenta
+                por cento e olhos com noventa e cinco por cento. O infográfico também traz a composição da água no corpo: dezesseis por
+                cento de proteínas, dezoito
+                por cento de gordura e um por cento de minerais, reforçando a importância da água para o funcionamento do organismo.
+            </p>
+        </section>
+        <br>
+        <p>
+            É importante reconhecer que esta é fundamental para nossa existência. Por isso, é de extrema importância
+            que nosso organismo seja frequentemente hidratado, tanto pela ingestão direta do líquido quanto pela
+            absorção por intermédio dos alimentos. A quantidade necessária para o organismo varia de pessoa para
+            pessoa, sendo o médico o especialista indicado para orientar sobre o volume ideal para cada um. Contudo,
+            a maioria prescreve uma média de dois litros diários, entendendo-se que é necessário que haja uma
+            combinação entre o líquido e os sólidos, já que não é muito provável que você vá ingerir três quilogramas
+            de banana-prata ou mais de dois quilogramas de cenoura, diariamente.
+        </p>
+
+        <p>
+            A água, como moderador de temperatura, tem um alto calor específico, quantidade de calor necessária
+            para aumentar em 1°C uma grama (1g) de alguma substância sem que haja mudança de estado físico.
+        </p>
+
+        <p>
+            A água apresenta mais duas características: a adesão e a coesão. Clique nos botões para conhecê-las:
+        </p>
+
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADESÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        A adesão significa que as moléculas polares se unem a outras moléculas também polares.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    COESÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        A coesão é a forte ligação entre as moléculas de água, resultando na tensão superficial.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADESÃO + COESÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        A adesão mais a coesão geram a capilaridade e é graças à capilaridade que a água sai
+                        das raízes e chega às folhas das árvores.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                1.1. ESTRUTURA MOLECULAR DA ÁGUA
+            </h1>
+        </div>
+        <p>
+            Em sua composição química, a água é composta por dois átomos de hidrogênio e um de oxigênio, cuja
+            representação é H<sub>2</sub>O. Para formar uma molécula de água, é necessário que dois átomos de hidrogênio se
+            unam, por ligações covalentes, a um átomo de oxigênio (H–O–H) (Alberts et al., 2017; Martho; Amabis, 2006).
+        </p>
+        <p>
+            <strong>Ligação covalente</strong> é um tipo de ligação química que ocorre com o compartilhamento de pares de elétrons.
+        </p>
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura tema-verde">
+        
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 2</strong>.</span> Água: composição química e estrutura molecular.</h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761159589/figura_02_egghfh.png"
+                    alt="Infográfico representativo sobre a água no organismo.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: lcosmo; belchonock / 123RF</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem está dividida em duas partes. À esquerda, há uma ilustração detalhada da molécula de água, representada por
+                dois átomos de hidrogênio ligados a um átomo de oxigênio, formando um ângulo de cento e quatro vírgula quarenta e cinco
+                graus. O oxigênio está
+                representado como uma esfera vermelha com carga parcial positiva, enquanto os hidrogênios são esferas brancas com cargas
+                parciais negativas.
+                As ligações entre os átomos possuem comprimento de noventa e cinco vírgula oitenta e quatro picômetros, evidenciando a
+                polaridade da molécula.
+                A fórmula da água, H2
+                O, aparece abaixo da representação. À direita, há a imagem de um copo com água sobre um fundo azul claro, contendo
+                representações gráficas das moléculas de água dispersas no líquido, reforçando visualmente a composição molecular da
+                substância. A imagem
+                evidencia a estrutura angular e polar da molécula de água, essencial para suas propriedades físico-químicas.
+            </p>
+        </section>
+        <br>
+        <p>
+            A água é uma molécula inorgânica, classificada como polar, sendo que as ligações formam um arranjo
+            tetraédrico com um ângulo de cerca de 104,5° (Castro; Tagliaferri; Tagliaferri, 1989). Na molécula de água,
+            acontece uma distribuição desigual de cargas, pois o núcleo do átomo de oxigênio atrai elétrons mais
+            fortemente do que o único próton do núcleo dos átomos de hidrogênio. Essa característica transforma
+            a molécula de água em um dipolo, no qual o oxigênio mantém a carga parcialmente negativa, enquanto
+            os átomos de hidrogênio mantêm cargas parciais positivas. É justamente essa distribuição desigual que
+            torna a molécula de água uma molécula polar.
+        </p>
+
+        <p>
+            Essa estrutura particular define suas propriedades especiais. A união das moléculas de água ocorre pelas
+            ligações de hidrogênio. Assim, os átomos de oxigênio (eletronegativos) interagem com os átomos de
+            hidrogênio (eletropositivos), garantindo a estrutura da água nos estados líquido e sólido. Quando essas
+            moléculas estão no estado líquido, elas estão constantemente se desfazendo e se refazendo, garantindo
+            a fluidez da água. No estado sólido, as pontes de hidrogênio ficam sólidas e rígidas. No estado gasoso,
+            as ligações se desfazem, provocando a dispersão de cada molécula da água (Alberts <i>et al</i>., 2017).
+        </p>
+
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura tema-verde">
+        
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 3</strong>.</span> Estados físicos da matéria.</h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761159728/figura_03_yynniw.png"
+                    alt="Estados físicos da matéria.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: gritsalak / 123RF.</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem ilustra os três estados físicos clássicos da matéria: sólido, líquido e gasoso. À esquerda, observa-se um
+                exemplo
+                visual de cada estado: gelo para o estado sólido, água para o estado líquido e uma nuvem para o estado gasoso. No
+                centro, estão representadas
+                as partículas que compõem cada estado, evidenciando seu grau de organização e espaçamento. No estado sólido, as
+                partículas estão organizadas
+                e muito próximas; no líquido, estão mais espaçadas e com certa mobilidade; no gasoso, encontram-se completamente
+                dispersas. À direita, uma
+                escala de temperatura sugere a relação entre o aquecimento e a transição entre os estados.
+            </p>
+        </section>
+        <br>
+
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                1.2. ÁGUA COMO SOLVENTE UNIVERSAL
+            </h1>
+        </div>
+
+        <p>
+            Solução é uma mistura formada por solvente e soluto. Logo, para existir uma solução é necessário que haja
+            uma interação entre solvente e soluto. A solução é uma mistura homogênea, ou seja, ela tem apenas uma
+            fase. O solvente é um material capaz de dissolver outro material; o soluto é um material que foi dissolvido
+            por outro. Por exemplo, em uma solução de água com açúcar, o açúcar é o soluto e a água é o solvente.
+        </p>
+        <p>
+            A interação entre o soluto e o solvente está relacionada à polaridade e às forças intermoleculares. A
+            polaridade indica se é polar, apresenta polos positivo e negativo, ou se é apolar, não apresenta polos. O
+            solvente dissolve o soluto que apresenta característica polar semelhante à dele.
+        </p>
+        <p>
+            As forças intermoleculares podem ser de polo induzido, de polo permanente ou de ligações de
+            hidrogênio, se as moléculas interagem com o mesmo tipo de força, o solvente terá maior capacidade
+            de dissolver o soluto. A água é um excelente solvente, capaz de dissolver grande variedade de
+            substâncias químicas, tais como sais, gases, glicídios, aminoácidos, proteínas e ácidos nucleicos.
+            Por isso, costuma ser chamada de “solvente universal”. Clique nos cards para ver diferentes tipos de
+            forças:
+        </p>
+
+        <br><br>
+        <div class="cards-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">DIPOLO INDUZIDO</div>
+                    <div class="flip-card-back">Ocorre entre
+                    moléculas
+                    apolares, com
+                    interação fraca e
+                    temporária.</div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">DIPOLO PERMANENTE</div>
+                    <div class="flip-card-back">Mantém-se
+                    constante entre
+                    moléculas
+                    polares.
+                </div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">LIGAÇÃO DE HIDROGÊNIO</div>
+                    <div class="flip-card-back">Envolve átomos
+                    de hidrogênio
+                    ligados a F, O ou
+                    N, promovendo
+                    forte atração.</div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <p>
+            Nesse contexto, a água interage e dissolve compostos polares e ionizados, pois esses tipos de compostos
+            são hidrossolúveis, como o açúcar e o sal. Substâncias pouco solúveis ou insolúveis em água, ou apolares,
+            são chamadas de hidrofóbicas (do grego <i>hydro</i>, água, e <i>phobos</i>, medo, aversão), como os óleos. A razão da
+            insolubilidade é que moléculas de água não conseguem interagir com moléculas apolares, e estas tendem a
+            ficar agregadas, não formando soluções (Martho; Amabis, 2006). Clique nos botões para ampliar esse contraste:
+        </p>
+
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    HIDROSSOLÚVEL
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Substância que se dissolve facilmente em água por compatibilidade polar.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    HIDROFÓBICO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Material que repele a água, como lipídios e hidrocarbonetos.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    TENSÃO SUPERFICIAL
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Atração entre moléculas de água que dificulta a penetração de apolares.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            O líquido que preenche as células vivas, denominado citosol, é uma solução aquosa com diversos tipos de
+            solutos (glicídios, aminoácidos, proteínas, sais minerais etc.), sendo que é nesse local que ocorrem diversas
+            reações. O sangue e outros líquidos corporais dos seres pluricelulares também são soluções aquosas.
+        </p>
+        <p>
+            A água é necessária para diversas reações químicas, as quais são chamadas de transformação, em que
+            os reagentes se convertem em produtos. A água pode fazer o papel de reagente ou de produto. Quando
+            se tem uma reação por hidrólise, a água é considerada o reagente, porque não forma água, mas ela é
+            necessária para acontecer. Para quebrar a ligação entre dois aminoácidos (ligações peptídicas) é preciso
+            incluir uma molécula de água, porque ela compensa as eventuais perdas das ligações. Este é um exemplo
+            de reação por hidrólise na qual a água é o reagente. Clique nas setas para ver exemplos de reações:
+        </p>
+
+        <br>
+        <section class="slider-texto-container tema-green" data-slider-id="2">
+            <!-- conteúdo do slider 2 -->
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <p class="conteudo-texto">
+                        <strong>Hidrólise do ATP</strong>: A água quebra a ligação entre fosfatos, liberando energia celular.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>Digestão de proteínas</strong>: A água participa da quebra das ligações peptídicas no estômago.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>Hidrólise de ésteres</strong>: Usada na decomposição de lipídios em ácidos graxos e glicerol.
+                    </p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+            </div>
+        </section>
+        <br>
+
+        <p>
+            Há outro tipo de reação química na qual a água não atua como reagente, mas sim como produto. Esse é o
+            caso das reações de condensação, em que ocorre a formação de uma molécula de água durante a união
+            de dois aminoácidos por meio de uma ligação peptídica. Nesse processo, a ligação entre os monômeros
+            libera uma molécula de água como subproduto da síntese.
+        </p>
+    </section>
+    <section class="secao2" id="secao2">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                2. Estrutura molecular e função dos polímeros constituintes das células
+            </h1>
+        </div>
+
+        <p>
+            Polímeros são macromoléculas formadas pela junção de inúmeras moléculas menores que começam a
+            se ligar umas às outras.
+        </p>
+
+        <p>
+            Com várias pequenas moléculas estando sob pressão e temperatura adequadas e com o auxílio de
+            um catalisador, lembrando que catalisador é aquele que diminui a energia de ativação do processo, as
+            moléculas menores começam a se ligar entre si. Da ligação, inicia-se a formação de um produto cada vez
+            maior, o polímero (Khan Academy, 2020; Nelson; Cox, 2019). Clique nas setas para visualizar fatores que
+            influenciam a formação de polímeros:
+        </p>
+
+        <br>
+        <section class="slider-texto-container tema-roxo" data-slider-id="2">
+            <!-- conteúdo do slider 2 -->
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <p class="conteudo-texto">
+                        <strong>Temperatura de reação</strong>: Condição térmica ideal que acelera a ligação entre monômeros.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>Pressão controlada</strong>: Ambientes pressurizados favorecem o crescimento da cadeia
+                        polimérica.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>Ação catalítica</strong>: Catalisadores reduzem a energia de ativação e aumentam a velocidade do
+                        processo.
+                    </p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+            </div>
+        </section>
+        <br>
+        
+        <p>
+            As moléculas pequenas são chamadas de monômeros. Meros = partes. Cada parte se polimeriza para
+            constituir o produto chamado polímero. A polimerização pode ser por adição ou por condensação. Por adição,
+            os monômeros vão se unindo para formar o polímero a partir da abertura de uma dupla ligação, que ocorre
+            com o rompimento da ligação da dupla. Como exemplo podemos citar o polietileno, policloreto de vinila (PVC),
+            polipropileno e o teflon. Clique nos cards para conhecer exemplos típicos da polimerização por adição:
+        </p>
+
+        <br><br>
+        <div class="cards-container tema-verde">
+            <div class="flip-card tema-verde">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">POLIETILENO</div>
+                    <div class="flip-card-back">Usado na
+                    produção
+                    de sacolas e
+                    embalagens
+                    plásticas.</div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">PVC</div>
+                    <div class="flip-card-back">Amplamente
+                    empregado na
+                    construção civil,
+                    como em tubos e
+                    conexões.
+                </div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">POLIPROPILENO</div>
+                    <div class="flip-card-back">Presente em
+                    potes, tampas
+                    e tecidos
+                    sintéticos.</div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">TEFLON</div>
+                    <div class="flip-card-back">Utilizado como
+                    revestimento
+                    antiaderente em
+                    utensílios de
+                    cozinha.</div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <p>
+            Polímeros de condensação são obtidos pela adição de monômeros diferentes, com eliminação de substância
+            inorgânica, geralmente H<sub>2</sub>O. Para que haja a união dos monômeros é preciso que, durante a reação, ocorra
+            a saída de uma molécula inorgânica. Exemplificando: poliamidas e poliésteres (Castro; Tagliaferri; Tagliaferri,
+            1989). Clique nos botões para aprofundar a compreensão sobre polimerização por condensação:
+        </p>
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    POLIAMIDAS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Resultam da reação entre aminas e ácidos carboxílicos, com eliminação de água.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    POLIÉSTERES
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Formados pela união de álcoois e ácidos, liberando água como subproduto.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    IMPORTÂNCIA DA ELIMINAÇÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        A retirada de moléculas pequenas é o que permite a ligação entre os monômeros.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            Quanto ao tipo de monômero, temos os homopolímeros e os copolímeros. Homopolímeros são
+            polímeros que se formam no caso dos monômeros serem todos iguais. Copolímeros são obtidos pela
+            união de diferentes monômeros (Alberts <i>et al</i>., 2017). Clique nas abas para comparar os tipos de
+            arranjo entre monômeros:
+        </p>
+
+        <br>
+        <div class="tabs-container tema-verde">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="tab1">Homopolímero</button>
+                <button class="tab-button" data-tab="tab2">Copolímero alternado</button>
+                <button class="tab-button" data-tab="tab3">Copolímero em bloco</button>
+            </div>
+        
+            <div id="tab1" class="tab-content active">
+                Cadeia repetitiva com um único tipo de monômero.
+            </div>
+        
+            <div id="tab2" class="tab-content">
+                Monômeros diferentes intercalados em sequência regular.
+            </div>
+        
+            <div id="tab3" class="tab-content">
+                Agrupamento de segmentos idênticos de cada monômero.
+            </div>
+        </div>
+        <br>
+        <p>
+            Os monômeros podem ser de origem natural, como as proteínas, o amido e a celulose, ou de origem sintética,
+            produzidos em laboratório. Quanto à fusibilidade, os polímeros classificam-se em termoplásticos, que podem
+            ser moldados por meio do aquecimento, e termofixos, que não podem ser remoldados, pois não resistem à
+            exposição a altas temperaturas. Clique nos botões para ver usos práticos relacionados à fusibilidade:
+        </p>
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    TERMOPLÁSTICOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Aplicados em embalagens flexíveis, brinquedos e fibras têxteis.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    TERMOFIXOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Utilizados em componentes elétricos e superfícies de bancada.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    PLÁSTICOS BIODEGRADÁVEIS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Desenvolvidos para se degradarem naturalmente no meio ambiente.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            As células possuem componentes orgânicos e inorgânicos. Os componentes inorgânicos, tais como a
+            água e minerais, apresentam funções diversas. A água, como já vimos, é o solvente universal. Já os
+            componentes orgânicos, tais como carboidratos, proteínas, lipídios e ácidos nucleicos exibem dentre suas
+            funções fonte de energia. Clique nos botões para entender a relação entre polímeros e a biologia celular:
+        </p>
+
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    PROTEÍNAS
+
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Polímeros naturais formados por aminoácidos ligados por ligações peptídicas.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    ÁCIDOS NUCLEICOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        DNA e RNA são polímeros de nucleotídeos com função hereditária.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    CARBOIDRATOS COMPLEXOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Polímeros como amido e glicogênio armazenam energia nos seres vivos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+    <!-- Contêiner externo para definir a cor de fundo -->
+    <section class="outer-background">
+        <!-- Seção Saiba Mais - Retângulo de Fundo -->
+        <section class="background-section">
+            <!-- Círculo Verde -->
+            <div class="circle-green">
+                <!-- Círculo Branco com ícone -->
+                <div class="circle-white">
+                    <i class='bx bx-book-reader'></i>
+                </div>
+            </div>
+            <div class="transparent-section">   
+                <br>
+                <h1 class="learn-more-title">SAIBA MAIS</h1>
+                <br>
+                <p class="learn-more-paragraph">
+                    Agora que já retomamos os principais grupos de macromoléculas presentes
+                    nas células, é hora de observar com mais atenção uma função específica das
+                    proteínas: sua atuação na membrana plasmática. O vídeo a seguir apresenta
+                    como essas estruturas proteicas estão organizadas na membrana e quais papéis
+                    desempenham na comunicação, no transporte de substâncias e na manutenção
+                    da integridade celular. Assista com atenção para compreender como essas
+                    moléculas participam diretamente do funcionamento e da adaptação das células
+                    aos diferentes ambientes.
+                    <br><br>
+                    <strong>Link</strong>: Proteínas da membrana plasmática<br>
+                    
+                </p>
+                <!-- Ícone de Play -->
+                <div class="play-icon" data-video="https://www.youtube.com/embed/K32_i_TBIIY?si=5Tf45NcMJDACrG_H"
+                    onclick="openVideoModal(this)">
+                    <i class='bx bx-play-circle'></i>
+                </div>
+            </div>
+            <!-- Modal com o vídeo -->
+            <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+                <div class="video-content" onclick="event.stopPropagation()">
+                    <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                    <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="secao2" id="secao2">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                2.1. CARBOIDRATOS
+            </h1>
+        </div>
+
+        <p>
+            Os carboidratos são presença constante nos noticiários, principalmente quando se trata de nutrição e
+            saúde, sendo o seu consumo geralmente associado a problemas de saúde. Porém, essas moléculas
+            não são vilãs, elas possuem funções importantes, como ser a fonte principal de energia para as células,
+            participar da formação de outras moléculas como os nucleotídeos, e no reconhecimento célula-célula.
+        </p>
+        <p>
+            Estão presentes em vários organismos diferentes, por exemplo, na celulose das plantas e nas carapaças
+            dos invertebrados (Castro; Tagliaferri; Tagliaferri, 1989; Martho; Amabis, 2006).
+        </p>
+
+        <p>
+            Os carboidratos são açúcares, glicídios, sacarídeos e hidratos de carbono. São compostos orgânicos, cuja
+            maioria é formada pelos átomos de carbono, hidrogênio e oxigênio. Alguns podem ter nitrogênio, fósforo e
+            enxofre. Há carboidratos em pães, massas, leite e frutas. Eles desempenham função energética ou estrutural.
+            Na função energética, o açúcar ingerido é digerido e a glicose entra na célula. A partir dessa glicose, é
+            formado o ATP (Adenosina trifosfato) na respiração celular, produzindo energia (Nelson; Cox, 2019).
+        </p>
+
+        <p>
+            Na função energética, podemos destacar:
+        </p>
+        
+        <div class="topico-texto">
+            <ul>
+                <li><span class="topico-destaque">A parede celular das plantas, que é composta de carboidratos;</span></li>
+                <li><span class="topico-destaque">O exoesqueleto dos insetos, que tem a função de estrutura do organismo;</span></li>
+                <li><span class="topico-destaque">O glicocálice, que é um envoltório externo à membrana plasmática presente em células animais e
+                de alguns protozoários. Este é composto por glicolipídios (carboidratos associados com lipídios)
+                e glicoproteínas (carboidratos associados com proteínas), produzidos e renovados pela própria
+                célula.
+                </span></li>
+            </ul>
+        </div>
+        
+        <p>
+            Os carboidratos são classificados como monossacarídeos, oligossacarídeos ou polissacarídeos.
+            Os monossacarídeos apresentam apenas uma molécula de açúcar.
+            As moléculas de carboidratos são açúcares simples, não sofrem hidrólise, possuem de três até sete átomos de carbono.
+            A fórmula geral para classificar o monossacarídeo de acordo com o número de carbonos é
+            C<sub>m</sub>H<sub>2m</sub>O<sub>m</sub> ou (CH<sub>2</sub>O)<sub>m</sub>. Assim, temos (Clique nas abas):
+        </p>
+
+        <br><br>
+        <div class="tabs-container tema-verde">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="tab1">Triose</button>
+                <button class="tab-button" data-tab="tab2">Tetrose</button>
+                <button class="tab-button" data-tab="tab3">Pentose</button>
+                <button class="tab-button" data-tab="tab4">Hexose</button>
+                <button class="tab-button" data-tab="tab5">Heptose</button>
+            </div>
+        
+            <div id="tab1" class="tab-content active">
+                Possui três carbonos C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>
+            </div>
+        
+            <div id="tab2" class="tab-content">
+                Possui quatro carbonos C<sub>4</sub>H<sub>8</sub>O<sub>4</sub>
+            </div>
+        
+            <div id="tab3" class="tab-content">
+                Possui cinco carbonos C<sub>5</sub>H<sub>10</sub>O<sub>5</sub>
+            </div>
+
+            <div id="tab4" class="tab-content">
+                Possui seis carbonos C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+            </div>
+
+            <div id="tab5" class="tab-content">
+                Possui sete carbonos C<sub>7</sub>H<sub>14</sub>O<sub>7</sub>
+            </div>
+        </div>
+        <br><br>
+
+        <p>
+            Como exemplo de hexoses temos a glicose (pão), frutose (frutas) e galactoses (leite), que podem ser
+            encontrados nas formas linear ou cíclica, mais estável e fisiologicamente predominante.
+        </p>
+        <p>
+            Como exemplo de pentoses temos a desoxirribose (presente no DNA) e a ribose (presente no RNA)
+            (Alberts <i>et al</i>., 2017).
+        </p>
+        <p>
+            Oligossacarídeos são formados pela união de duas até dez moléculas de monossacarídeos. São unidos
+            por ligação glicosídica, que se estabelece com a perda de uma molécula de água. Para quebrar a ligação
+            glicosídica, precisa haver a presença de água. O dissacarídeo é a ligação entre duas moléculas de
+            açúcares, os trissacarídeos são três moléculas de açúcares, os tetrassacarídeos são quatro moléculas de
+            açúcares e os pentassacarídeos são cinco moléculas de açúcares.
+        </p>
+        <p>
+            Alguns oligossacarídeos importantes são os dissacarídeos:
+        </p>
+        <br>
+        <!-- HTML -->
+        <div class="quadro-lista">
+            <ul>
+                <li>Sacarose (frutose + glicose);</li>
+                <li>Lactose (galactose + glicose);</li>
+                <li>Maltose (glicose + glicose);</li>
+            </ul>
+        </div>
+        <br>
+        <p>
+            Os polissacarídeos originam-se acima de dez moléculas de monossacarídeos. Podemos destacar alguns
+            polissacarídeos importantes, clique nos <i>cards</i> para ler:
+        </p>
+
+        <br><br>
+        <div class="cards-container tema-verde">
+            <div class="flip-card tema-verde">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">AMIDO</div>
+                    <div class="flip-card-back">
+                    União de
+                    glicoses (reserva
+                    energética em
+                    animais e algas)</div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">GLICOGÊNIO</div>
+                    <div class="flip-card-back">
+                        União de
+                        glicoses (reserva
+                        energética em
+                        animais e fungos)
+                    </div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">CELULOSE</div>
+                    <div class="flip-card-back">
+                        Principal
+                        componente das
+                        paredes celulares
+                        das plantas
+                    </div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">QUITINA</div>
+                    <div class="flip-card-back">
+                        Faz parte do
+                        exoesqueleto
+                        dos artrópodes
+                        (insetos) e da
+                        parede celular
+                        dos fungos
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </section>
+    <!-- Contêiner externo para definir a cor de fundo -->
+    <section class="outer-background">
+        <!-- Seção Saiba Mais - Retângulo de Fundo -->
+        <section class="background-section">
+            <!-- Círculo Verde -->
+            <div class="circle-green">
+                <!-- Círculo Branco com ícone -->
+                <div class="circle-white">
+                    <i class='bx bx-book-reader'></i>
+                </div>
+            </div>
+            <div class="transparent-section">
+                <br>
+                <h1 class="learn-more-title">SAIBA MAIS</h1>
+                <br>
+                <p class="learn-more-paragraph">
+                    Para complementar esse tema, é importante compreender o papel geral dos
+                    carboidratos na estrutura e no metabolismo celular. O vídeo a seguir apresenta uma
+                    introdução clara sobre esses compostos, destacando suas classificações, funções e
+                    onde são encontrados nos organismos vivos. Assista com atenção e observe como os
+                    carboidratos estão presentes em diversos contextos biológicos, atuando tanto como
+                    fonte de energia quanto como elementos estruturais essenciais.
+                    <br><br>
+                    <strong>Link</strong>: https://www.youtube.com/watch?v=2pURP5w0Grc<br>
+    
+                </p>
+                <!-- Ícone de Play -->
+                <div class="play-icon" data-video="https://www.youtube.com/embed/2pURP5w0Grc?si=RBJbXU5by7ZoJWTz"
+                    onclick="openVideoModal(this)">
+                    <i class='bx bx-play-circle'></i>
+                </div>
+            </div>
+            <!-- Modal com o vídeo -->
+            <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+                <div class="video-content" onclick="event.stopPropagation()">
+                    <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                    <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="secao2" id="secao2">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                2.2. PROTEÍNA
+            </h1>
+        </div>
+
+        <p>
+            As proteínas são substâncias orgânicas encontradas em grande quantidade nos seres vivos. Nos animais – depois da água –
+            são os componentes mais abundantes. São formadas por carbono, oxigênio, hidrogênio,
+            nitrogênio e algumas podem ter enxofre. Clique nos botões para conhecer as funções das proteínas:
+        </p>
+
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    ESTRUTURAL (QUERATINA, COLÁGENO)
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Unha, cabelo, pele, são encontradas no esqueleto de certas esponjas, no exoesqueleto
+                        dos artrópodes e na constituição da teia das aranhas.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    ENERGÉTICA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        É a terceira fonte de energia, sendo que em primeiro lugar temos o açúcar e em segundo
+                        os lipídios.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    DEFESA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Anticorpos atuam como defesa.
+                    </p>
+                </div>
+            </div>
+
+            <!-- quarto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    ENZIMÁTICA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Enzimas são, em sua maioria, proteínas especializadas que atuam como catalisadores
+                        biológicos, acelerando reações químicas ao reduzir a energia de ativação necessária
+                        para que elas ocorram. Embora praticamente todas as enzimas sejam proteínas, nem
+                        todas as proteínas exercem função enzimática. Existem casos extremamente raros de
+                        enzimas que não são proteínas, como as ribozimas (enzimas formadas por RNA).
+                    </p>
+                </div>
+            </div>
+
+            <!-- quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    HORMONAL
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        Insulina e glucagon que controlam o nível de açúcar na corrente sanguínea.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        <br>
+
+        <p>
+            A proteína é um polímero, cujo monômero é um aminoácido e suas ligações são peptídicas. Existem vinte
+            tipos de aminoácidos e, de acordo com a quantidade de aminoácidos e das combinações realizadas, são
+            gerados diferentes tipos de proteínas (Alberts <i>et al</i>., 2017; NELSON; COX, 2019).
+        </p>
+
+        <p>
+            Portanto, as unidades constituintes das proteínas são os aminoácidos, que são formados por um grupo
+            funcional carboxila e um grupo funcional amino, um átomo de hidrogênio e uma cadeia lateral (grupo R)
+            ligados ao mesmo átomo de carbono, conhecido como carbono α (alfa).
+        </p>
+
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura figura-20">
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 4</strong>.</span> Fórmula geral dos aminoácidos mostrando os grupos funcionais e o radical ligados ao carbono α
+            com grupos ionizados.</h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761167117/figura_04_x9pfgo.png"
+                    alt="Esquema da formação da imagem em um microscópio óptico simples.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: goodapp / 123RF.</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem representa a estrutura geral de um aminoácido, unidade fundamental das proteínas. No centro, há um átomo de
+                carbono (C) ligado a quatro grupos distintos: um grupo amino (formado por um nitrogênio ligado a dois hidrogênios), um
+                grupo carboxila (formado
+                por um carbono duplamente ligado a um oxigênio e ligado a uma hidroxila), um hidrogênio simples e uma cadeia lateral
+                representada pela letra
+                R, que varia entre os diferentes aminoácidos. A imagem também apresenta uma fórmula estrutural simplificada na parte
+                inferior, evidenciando a
+                disposição básica dos átomos.
+            </p>
+        </section>
+        <br>
+
+        <p>
+            Os aminoácidos podem ser naturais (os que produzimos), essenciais (não produzimos, logo é necessário
+            ingeri-los), semiessenciais ou seminaturais (produzimos insuficientemente, então também é preciso ingeri-los).
+        </p>
+        <p>
+            Os seguintes aminoácidos são considerados essenciais: leucina, isoleucina, valina, triptofano, metionina,
+            fenilalanina, treonina e lisina, sendo que a histidina é essencial apenas na infância.
+        </p>
+        <p>
+            As proteínas podem ser polímeros de aminoácidos e em suas moléculas existem ligações peptídicas
+            em número igual ao de aminoácidos presentes menos um. Os polímeros de aminoácidos são chamados
+            peptídeos. Dipeptídeo são dois aminoácidos; tripeptídeo são três aminoácidos; tetrapeptídeo são quatro
+            ou mais aminoácidos, sendo que todos esses são oligopeptídeos.
+        </p>
+        <p>
+            As moléculas de proteínas podem ter estrutura primária, secundária, terciária ou quaternária. Na estrutura
+            primária há uma sequência linear de aminoácidos. Na secundária, ela forma uma espiral com aspecto
+            em hélice. Na terciária, além de se formarem pela sequência de aminoácidos e se enrolarem em espiral,
+            elas se dobram sobre si mesmas formando um todo meio arredondado e bem compacto. A quaternária é
+            formada quando quatro proteínas de estrutura terciária se unem. Lembrando que a proteína só é funcional
+            quando é terciária ou quaternária.
+        </p>
+        <p>
+            A forma da proteína está intimamente ligada à sua função (Nelson; Cox, 2019). Sua forma pode ser
+            afetada por (clique nas setas para ler):
+        </p>
+
+        <br>
+        <section class="slider-texto-container tema-roxo" data-slider-id="2">
+            <!-- conteúdo do slider 2 -->
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <p class="conteudo-texto">
+                        <strong>mutação</strong>: por exemplo, se mudar um aminoácido da proteína que está na hemácia, muda
+                        também a forma dessa hemácia
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>desnaturação (se mudou a forma, muda a função)</strong>: temperatura, pH, substâncias químicas
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>enzimas</strong>: provocam uma redução da energia de ativação necessária para que uma reação
+                        química aconteça e isso acelera as reações
+                    </p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+            </div>
+        </section>
+        <br>
+
+        <p>
+            Alguns fatores são conhecidos por afetarem as atividades das enzimas, tais como: concentração do
+            substrato, temperatura e pH. Quanto maior a concentração do substrato, maior será a velocidade da
+            reação enzimática para uma mesma concentração da enzima.
+        </p>
+
+        <p>
+            Há enzimas que atingem o máximo da atividade em pH 7 (endoenzimas), outras, entre 1,5 e 2,5, sendo mais
+            ativas como a pepsina (exoenzima). Cada enzima atua melhor em uma dada temperatura, denominada
+            ótima. Ouça o podcast a seguir:
+        </p>
+        <br>
+        <!-- Container Podcast -->
+        <div class="podcast-container">
+            <h2 class="podcast-title">PODCAST</h2>
+        
+            <!-- Ícone de Play -->
+            <div class="play-icon" data-video=""
+                onclick="openVideoModal(this)">
+                <i class='bx bx-play-circle'></i>
+            </div>
+        </div>
+        
+        <!-- Modal com o vídeo -->
+        <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+            <div class="video-content" onclick="event.stopPropagation()">
+                <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                2.3. LIPÍDIOS
+            </h1>
+        </div>
+        <p>
+            Certamente você já ouviu as palavras colesterol, gordura e óleo, certo? Isso significa que você também
+            já ouviu falar dos lipídios. Essas moléculas desempenham muitas funções importantes nas células e são
+            indispensáveis à manutenção da vida.
+        </p>
+        <p>
+            Os lipídios são hidrofóbicos e apolares. São insolúveis em água por serem apolares e a água polar. São
+            solúveis em solventes orgânicos, por exemplo, éter, acetona e benzina.
+        </p>
+        <p>
+            Os lipídios também são fonte de energia e importantes para todos os seres vivos, pois estes são constituídos
+            de pelo menos uma célula e todas as células são revestidas por uma membrana plasmática que é formada
+            por lipídios (Castro; Tagliaferri; Tagliaferri, 1989; Alberts <i>et al</i>., 2017).
+        </p>
+        <p>
+            Os lipídios são compostos orgânicos, possuem carbono, assim como carboidratos, proteínas, vitaminas
+            e ácidos nucleicos, e apresentam as seguintes funções (clique nas setas para ler):
+        </p>
+        <br>
+        <section class="slider-texto-container tema-roxo" data-slider-id="2">
+            <div class="slider-texto-wrapper">
+                <!-- Slide 1 com imagem -->
+                <div class="slide-texto ativo">
+                    <div class="slide-imagens">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761167940/63570793_m_t5rfz9.jpg" alt="Imagem 1" class="zoomable slider-img">
+                    </div>
+                    <p class="conteudo-texto">
+                        <strong>Isolantes térmicos</strong>: animais que são endotérmicos, ou seja, que controlam
+                        internamente a sua temperatura, necessitam de uma camada de gordura
+                        revestindo o seu corpo, pois os lipídios conduzem muito pouco o calor do
+                        corpo para fora, então são isolantes térmicos.
+                    </p>
+                </div>
+        
+                <!-- Slide 2 com imagem -->
+                <div class="slide-texto">
+                    <div class="slide-imagens">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761167940/54927815_m_gbflxn.jpg" alt="Imagem 2" class="zoomable slider-img">
+                    </div>
+                    <p class="conteudo-texto">
+                        <strong>reserva de energia</strong>: é através dos lipídios que nós armazenamos energia,
+                        ou seja, isso ocorre nas células adiposas (adipócitos) que estão presentes
+                        no nosso tecido adiposo.
+                    </p>
+                </div>
+        
+                <!-- Slide 3 sem imagem -->
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>Fosfolipídeos</strong>: constituintes da membrana plasmática de todas as células.
+                    </p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores"></div>
+        </section>
+        <br>
+    </section>
+    <!-- Contêiner externo para definir a cor de fundo -->
+    <section class="outer-background">
+        <!-- Seção Saiba Mais - Retângulo de Fundo -->
+        <section class="background-section">
+            <!-- Círculo Verde -->
+            <div class="circle-green">
+                <!-- Círculo Branco com ícone -->
+                <div class="circle-white">
+                    <i class='bx bx-book-reader'></i>
+                </div>
+            </div>
+            <div class="transparent-section">
+                <br>
+                <h1 class="learn-more-title">SAIBA MAIS</h1>
+                <br>
+                <p class="learn-more-paragraph">
+                    Após conhecer algumas das principais funções dos lipídios no corpo humano, é hora
+                    de ampliar a compreensão sobre esse grupo de macromoléculas. O vídeo a seguir
+                    oferece uma visão geral dos lipídios, destacando suas características estruturais,
+                    classificações e importância biológica. Preste atenção à forma como esses compostos
+                    participam da formação das membranas celulares, do armazenamento de energia e
+                    da regulação de processos metabólicos essenciais.
+                    <br><br>
+                    <strong>Link</strong>: Visão geral sobre lipídios | Macromoléculas | Biologia | Khan Academy<br>
+    
+                </p>
+                <!-- Ícone de Play -->
+                <div class="play-icon" data-video="https://www.youtube.com/embed/wDRz9ENEIEY?si=990ueWO2fB0wtiOG"
+                    onclick="openVideoModal(this)">
+                    <i class='bx bx-play-circle'></i>
+                </div>
+            </div>
+            <!-- Modal com o vídeo -->
+            <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+                <div class="video-content" onclick="event.stopPropagation()">
+                    <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                    <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="secao2" id="secao2">
+        <p>
+            Os lipídios podem ser classificados como: glicerídeos, esteroides, cerídeos (ceras), fosfolipídios e
+            carotenóides. Clique nas setas para conhecer cada um deles:
+        </p>
+
+        <br>
+        <section class="slider-texto-container tema-roxo" data-slider-id="2">
+            <div class="slider-texto-wrapper">
+                <!-- Slide 1 com imagem -->
+                <div class="slide-texto ativo">
+                    <div class="slide-imagens">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761168321/figslider_01_kpiyyr.jpg"
+                            alt="Imagem 1" class="zoomable slider-img">
+                    </div>
+                    <p class="conteudo-texto">
+                        <strong>Glicerídeos</strong>: o mais importante é o triglicerídeo, que é a união de três ácidos graxos e um álcool
+                        (glicerol). São os óleos e as gorduras. Sob a forma de glicerídeos que as plantas e os animais
+                        armazenam energia. Os óleos são de origem vegetal, são líquidos em temperatura ambiente e suas
+                        cadeias de ácidos graxos são insaturadas, o que significa que pelo menos uma ligação entre dois
+                        carbonos é dupla, permitindo serem líquidos. As gorduras são de origem animal, são sólidas na
+                        temperatura ambiente e o ácido graxo delas possui gordura saturada. A margarina, por exemplo, é
+                        derivada de glicerídeos.
+                    </p>
+                </div>
+        
+                <div class="slide-texto slide-com-imagens-maiores">
+                    <div class="slide-imagens">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761168337/figslider_02_n2dqkp.png" alt="Imagem 1"
+                            class="zoomable slider-img">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761168338/figslider_03_szwqpj.png" alt="Imagem 2"
+                            class="zoomable slider-img">
+                    </div>
+                    <p class="conteudo-texto">
+                        <strong>Esteroides</strong>: o colesterol, matéria-prima para os esteroides dos animais; o fitoesterol, componente
+                        básico dos esteroides das plantas e o ergosterol, matéria-prima dos esteroides de fungos. O colesterol
+                        está presente na membrana plasmática de todas as células do nosso corpo e, em excesso, pode acabar
+                        sendo depositado nas artérias. O LDL é lipoproteína de baixa densidade (Low Density Lipoprotein) e
+                        HDL é lipoproteína de alta densidade (High Density Lipoprotein). O LDL une-se ao colesterol e o leva
+                        para a membrana das células, se tiver muito LDL, ele deposita o colesterol nas artérias. O HDL passa
+                        pelas artérias e recolhe o colesterol que está ali depositado e o devolve ao fígado. Os triglicerídeos
+                        insaturados estimulam o aumento do HDL e os triglicerídeos saturados o aumento do LDL.
+                    </p>
+                </div>
+                
+                <!-- Slide 3 com imagem -->
+                <div class="slide-texto slide-com-imagens-maiores">
+                    <div class="slide-imagens">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761169182/figslider_04_qqx7xs.png" alt="Imagem 1"
+                            class="zoomable slider-img">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761169182/figslider_05_vthzcq.png" alt="Imagem 2"
+                            class="zoomable slider-img">
+                    </div>
+                    <p class="conteudo-texto">
+                        <strong>Fosfolipídios</strong>: possuem uma característica importante: são moléculas anfipáticas, isto significa que
+                        possuem região hidrofóbica e hidrofílica na mesma molécula, além de serem uma classe especial de
+                        lipídios, os quais são os principais componentes das membranas plasmáticas ou celulares. Do ponto
+                        de vista químico, um fosfolipídio é um glicerídeo combinado a um grupo fosfato.
+                    </p>
+                </div>
+
+                <!-- Slide 4 com imagem -->
+                <div class="slide-texto slide-com-tres-imagens">
+                    <div class="slide-imagens colunas">
+                        <!-- Coluna 1 -->
+                        <div class="coluna-imagem">
+                            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761169284/figslider_06_vydo3l.jpg"
+                                alt="Imagem 1" class="zoomable slider-img">
+                        </div>
+                        <!-- Coluna 2 -->
+                        <div class="coluna-imagem">
+                            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761169440/figslider_07_tshdfs.jpg"
+                                alt="Imagem 2" class="zoomable slider-img">
+                            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761169440/figslider_08_fe26fu.jpg"
+                                alt="Imagem 3" class="zoomable slider-img">
+                        </div>
+                    </div>
+                    <p class="conteudo-texto">
+                        <strong>Cerídeos (ceras)</strong>: são formados por um álcool ligado a uma ou até 16 moléculas de ácidos graxos.
+                        Por serem altamente insolúveis em água, as ceras são úteis às plantas e animais. As folhas de
+                        muitas plantas têm a superfície recoberta de cera, o que as impermeabiliza e diminui a perda de
+                        água por transpiração. O revestimento corporal de certos insetos apresenta cera impermeabilizante.
+                        As abelhas produzem cera em grande quantidade, utilizando-a como material de construção das
+                        colmeias. Esse componente funciona também como impermeabilizante de penas de aves aquáticas.
+                        Protege o ouvido – cerume.
+                    </p>
+                </div>
+
+                <!-- Slide 5 com imagem -->
+                <div class="slide-texto">
+                    <div class="slide-imagens">
+                        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761170962/figslider_09_l3nuhp.jpg" alt="Imagem"
+                            class="zoomable slider-img">
+                    </div>
+                    <p class="conteudo-texto">
+                        <strong>Carotenoides</strong>: são pigmentos de cor vermelha, laranja ou amarela, insolúveis em água e solúveis
+                        em óleos e solventes orgânicos. Estão presentes nas células de todas as plantas, nas quais
+                        desempenham papel importante no processo de fotossíntese. Eles também são importantes para
+                        os animais, por exemplo, a molécula de caroteno, uma substância de cor alaranjada presente na
+                        cenoura e em outros vegetais, é matéria-prima para a produção da vitamina A. Essa vitamina é
+                        conhecida pela importância na visão, pois é precursora do retinal, uma substância sensível à luz
+                        presente na retina de nossos olhos.
+                    </p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores"></div>
+        </section>
+        <br>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                2.4. ÁCIDOS NUCLEICOS
+            </h1>
+        </div>
+        <p>
+            De acordo com Alberts et al. (2017), os ácidos nucleicos são assim chamados por seu caráter ácido e
+            por terem sido originalmente descobertos no núcleo das células. Há consenso entre os pesquisadores
+            de que os ácidos nucleicos são os responsáveis pela informação genética. Existem dois tipos de ácidos
+            nucleicos: RNA (ácido ribonucleico) e DNA (ácido desoxirribonucleico).
+        </p>
+        <p>
+            A molécula de ácido nucleico é constituída por uma sucessão de unidades ligadas entre si, chamadas
+            nucleotídeos que são constituídos de moléculas de fosfato, açúcar (pentose) e base nitrogenada. O
+            fosfato faz a ligação entre as pentoses da mesma cadeia. A molécula de DNA ou RNA é um polímero e os
+            nucleotídeos são seus monômeros. Função – armazenar as informações genéticas e transmiti-las.
+        </p>
+
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura figura-20">
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 5</strong>.</span> Estrutura básica de um nucleotídeo.</h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761171071/figura_05_egumkk.png"
+                    alt="Estrutura básica de um nucleotídeo.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: Lana Magalhães / Toda Matéria.</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a composição estrutural de um nucleotídeo, destacando três componentes principais com cores
+                distintas. À esquerda, em um círculo alaranjado, encontra-se o grupo fosfato, representado por um átomo de fósforo
+                central ligado a quatro átomos
+                de oxigênio, dois deles com carga negativa. No centro, em rosa, aparece a pentose, um açúcar de cinco carbonos numerados
+                de um linha a cinco
+                linha, com hidroxilas ligadas nas posições dois linha e três linha, e um grupo hidrogênio na posição quatro linha. À
+                direita, em verde, está a base
+                nitrogenada, com uma estrutura cíclica contendo átomos de nitrogênio, oxigênio e hidrogênio. A base está conectada ao
+                carbono um linha da
+                pentose, enquanto o grupo fosfato liga-se ao carbono cinco linha. A imagem representa de forma esquemática e organizada
+                a unidade fundamental
+                dos ácidos nucleicos, como DNA e RNA.
+            </p>
+        </section>
+        <br>
+        <p>
+            O DNA é uma dupla hélice e se enrola em proteínas denominadas histonas (DNA + proteínas = cromatinas),
+            que vão se condensando até chegar no que chamamos de cromossomo. Um cromossomo é uma molécula
+            de DNA condensada. Um gene é uma porção de DNA que armazena a informação suficiente para produzir
+            uma proteína. Um cromossomo pode conter dezenas de milhares de genes, cada um provendo instruções
+            de como fazer um produto específico que a célula precisa.O DNA e o RNA apresentam uma diferença
+            básica que está na pentose (açúcar). A pentose do DNA é a desoxirribose e a pentose do RNA é a ribose
+            (Ferreira, 2009; Nelson; Cox, 2019).
+        </p>
+
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura figura-20">
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 6</strong>.</span> Célula, cromossomo, DNA e gene.
+            </h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761171148/figura_06_mlywc9.png"
+                    alt="Célula, cromossomo, DNA e gene.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: designua / 123RF.</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta uma representação esquemática da organização do material genético. À esquerda, uma célula é
+                representada em azul, com o núcleo em destaque contendo cromossomos. Um dos cromossomos é ampliado no centro da imagem,
+                exibindo sua
+                estrutura com dois braços (curtos e longos, chamados de braço P e Q) e um centrômero que os une. O cromossomo é composto
+                por duas cromátides
+                irmãs. Na parte inferior, há um zoom na molécula de DNA, revelando sua estrutura de dupla hélice. São destacadas as
+                bases nitrogenadas (citosina,
+                guanina, adenina e timina) e a espinha dorsal de açúcar e fosfato. À direita, uma pequena porção da hélice é assinalada
+                como um gene, indicando
+                a unidade funcional do material genético. A imagem ilustra a hierarquia: da célula ao gene, passando pelo núcleo,
+                cromossomo e DNA.
+            </p>
+        </section>
+        <br>
+    </section>
+    <!-- Contêiner externo para definir a cor de fundo -->
+    <section class="outer-background">
+        <!-- Seção Saiba Mais - Retângulo de Fundo -->
+        <section class="background-section">
+            <!-- Círculo Verde -->
+            <div class="circle-green">
+                <!-- Círculo Branco com ícone -->
+                <div class="circle-white">
+                    <i class='bx bx-book-reader'></i>
+                </div>
+            </div>
+            <div class="transparent-section">
+                <br>
+                <h1 class="learn-more-title">SAIBA MAIS</h1>
+                <br>
+                <p class="learn-more-paragraph">
+                    Para compreender melhor como o DNA e o RNA armazenam e transmitem informações
+                    genéticas, é importante conhecer a estrutura de suas unidades formadoras: os nucleotídeos.
+                    O vídeo a seguir apresenta os principais componentes dessas moléculas, explicando
+                    de forma clara como se organizam e como dão origem aos ácidos nucleicos. Assista
+                    com atenção para entender como essas estruturas estão diretamente relacionadas ao
+                    funcionamento celular e à produção de proteínas.
+                    <br><br>
+                    <strong>Link</strong>: Introdução aos nucleotídeos e ácidos nucleicos<br>
+    
+                </p>
+                <!-- Ícone de Play -->
+                <div class="play-icon" data-video="https://www.youtube.com/embed/3KPnA4hvwGs?si=RxyYv1QvPswIJJqB"
+                    onclick="openVideoModal(this)">
+                    <i class='bx bx-play-circle'></i>
+                </div>
+            </div>
+            <!-- Modal com o vídeo -->
+            <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+                <div class="video-content" onclick="event.stopPropagation()">
+                    <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                    <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="secao2" id="secao2">
+        <p>
+            As bases nitrogenadas que consideramos são cinco – as purinas: Guanina (G) e Adenina (A) e as pirimidinas:
+            Citosina (C), Timina (T) e Uracila (U). Nos nucleotídeos de DNA estão presentes adenina, guanina, citosina
+            e timina. Nos de RNA são encontradas adenina, guanina, citosina e uracila. O pareamento das bases
+            ocorre sempre A = T no DNA, A = U no RNA, e C = G em ambos.
+        </p>
+
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura figura-20">
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 7</strong>.</span> Representação da estrutura molecular da molécula de DNA.
+            </h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761171334/figura_07_q1uko9.jpg"
+                    alt="Representação da estrutura molecular da molécula de DNA.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: Ferreira (2009, p. 24).</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta três representações complementares da molécula de DNA. À esquerda, observa-se uma cadeia de
+                nucleotídeos com os componentes destacados: grupos fosfato (representados pela letra P), açúcares desoxirribose
+                (representados pela letra D) e
+                bases nitrogenadas (adenina, timina, citosina e guanina). No centro, duas cadeias são emparelhadas no plano,
+                evidenciando as ligações entre as
+                bases: adenina com timina e citosina com guanina. À direita, a estrutura completa aparece em forma de dupla hélice,
+                representando a organização
+                tridimensional do DNA, com o pareamento das bases no interior da hélice e a estrutura helicoidal girando ao redor do seu
+                eixo.
+            </p>
+        </section>
+        <br>
+
+        <br>
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura figura-20">
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 8</strong>.</span> Estrutura molecular do DNA e RNA.
+            </h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761171394/figura_08_ekhjwn.png"
+                    alt="Representação da estrutura molecular da molécula de DNA.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: deeday333123 / 123RF.</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem compara a estrutura molecular e as bases nitrogenadas que compõem os ácidos nucleicos DNA (ácido
+                desoxirribonucleico) e RNA (ácido ribonucleico). No DNA, as bases nitrogenadas são adenina (A), timina (T), citosina (C)
+                e guanina (G), enquanto
+                no RNA, a timina é substituída pela uracila (U), mantendo as demais bases iguais. Ambas as moléculas possuem estrutura
+                em dupla hélice (no
+                caso do DNA) ou fita simples (RNA) e são representadas com suas bases emparelhadas ou isoladas. A ilustração destaca
+                visualmente cada base
+                por meio de formas e cores distintas, evidenciando a diferença entre os dois tipos de material genético.
+            </p>
+        </section>
+        <br>
+        <p>
+            A molécula do RNA é formada por uma cadeia simples de nucleotídeos, sendo encontrado principalmente
+            no citoplasma, e sua quantidade é variável entre as células, dependendo da atividade. São produzidos
+            no núcleo através da transcrição pela enzima RNA polimerase, a partir do DNA. O RNA é responsável
+            por pegar a informação armazenada no DNA e transformar a informação em proteína, chamada síntese
+            proteica. Há três tipos de RNAs: o mensageiro, o ribossômico e o transportador. Clique nas abas para
+            conhecer as características de cada um:
+        </p>
+
+        <br><br>
+        <div class="tabs-container tema-verde">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="tab1">1. RNA mensageiro</button>
+                <button class="tab-button" data-tab="tab2">2. RNA ribossômico</button>
+                <button class="tab-button" data-tab="tab3">3. RNA transportador</button>
+            </div>
+        
+            <div id="tab1" class="tab-content active">
+                <strong>1.</strong> É o resultado da transcrição, ou seja, quando vai formar uma proteína, o primeiro
+                passo é fazer uma leitura do material genético e, logo após essa transcrição, forma-se
+                a fita de RNA mensageiro. Ele leva a mensagem do nosso gene para o citoplasma da
+                célula para se juntar com outros RNAs e assim formar a proteína.
+            </div>
+        
+            <div id="tab2" class="tab-content">
+                <strong>2.</strong> É organizado no nucléolo, dentro do núcleo da célula, que se junta a outras proteínas
+                e forma o ribossomo, que vai receber o RNA mensageiro e formar a proteína. O RNA
+                ribossômico é o mais abundante na célula.
+            </div>
+        
+            <div id="tab3" class="tab-content">
+                <strong>3.</strong> É um RNA associado a aminoácidos. Toda proteína é formada por uma sequência de
+                aminoácidos e esses são transportados pelo RNA transportador no citoplasma da célula
+                para formar, assim, as proteínas.
+
+            </div>
+        </div>
+        <br><br>
+        
+        <!-- Bloco de Figura Estática -->
+        <section class="bloco-figura figura-20">
+            <!-- Título -->
+            <h3 class="titulo-figura"><span class="figura"><strong>Figura 9</strong>.</span> Ribossomo durante o processo de síntese proteica.
+            </h3>
+            <br>
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761171627/figura_09_sbsetp.png"
+                    alt="Representação da estrutura molecular da molécula de DNA.">
+            </div>
+        
+            <!-- Fonte -->
+            <p class="fonte-imagem"><strong><i>Fonte</strong>: designua / 123RF.</i></p>
+        
+            <!-- Descrição -->
+            <p class="descricao-figura">
+                <strong>Descrição da imagem:</strong>
+                A imagem mostra um ribossomo em plena atividade de síntese de proteínas. A estrutura do ribossomo é composta por
+                duas subunidades: uma subunidade maior, representada na parte superior, e uma subunidade menor, localizada na base.
+                Sobre o ribossomo,
+                visualiza-se uma cadeia de aminoácidos sendo formada, indicando a proteína em construção. Abaixo do ribossomo,
+                encontra-se o RNA mensageiro
+                (representado como uma fita azul com bases coloridas), onde os códons são lidos sequencialmente. Moléculas de RNA
+                transportador (tRNA), cada
+                uma carregando um aminoácido específico, se ligam ao RNA mensageiro conforme o pareamento dos códons, permitindo que os
+                aminoácidos
+                sejam ligados entre si. As setas ilustram o movimento de translocação do tRNA dentro do ribossomo e a liberação da
+                cadeia proteica em formação.
+            </p>
+        </section>
+        <br>
+        <p>
+            Ouça o podcast a seguir:
+        </p>
+        <br>
+        <!-- Container Podcast -->
+        <div class="podcast-container">
+            <h2 class="podcast-title">PODCAST</h2>
+        
+            <!-- Ícone de Play -->
+            <div class="play-icon" data-video="" onclick="openVideoModal(this)">
+                <i class='bx bx-play-circle'></i>
+            </div>
+        </div>
+        
+        <!-- Modal com o vídeo -->
+        <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+            <div class="video-content" onclick="event.stopPropagation()">
+                <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+    </section>
+    <!-- Seção Conclusão -->
+    <section id="conclusao" class="conclusao">
+        <!-- Conteúdo -->
+        <div class="conteudo-conclusao">
+            <div class="caixa-texto">
+                <h1 class="titulo-conclusao">CONCLUSÃO</h1>
+                <p>
+                    Chegando até aqui, é importante reconhecer como cada elemento estudado se encaixa na
+                    complexidade que forma os seres vivos. A água, com suas propriedades tão singulares, é muito
+                    mais do que um componente do nosso corpo: ela é o meio onde tudo acontece. Os carboidratos,
+                    proteínas, lipídios e ácidos nucleicos não estão presentes apenas nos livros ou nas tabelas de
+                    composição dos alimentos, eles estão em ação constante dentro de cada célula, sustentando,
+                    regulando e transformando processos que garantem nossa sobrevivência.
+                </p>
+                <p>
+                    Entender essas macromoléculas e suas interações permite que você enxergue o funcionamento celular
+                    com outros olhos. Não se trata apenas de decorar fórmulas ou nomes, mas de perceber o sentido por
+                    trás de cada estrutura, cada reação, cada função. O que parecia abstrato começa a fazer sentido quando
+                    percebemos que a lógica da vida também está nos pequenos detalhes: na digestão de um alimento, no
+                    suor durante uma caminhada, na respiração, no crescimento, na cura de um ferimento.
+                </p>
+                <p>
+                    Por isso, mais do que memorizar conceitos, o convite é para que você se envolva com o conteúdo de forma
+                    curiosa e atenta. Ao compreender como a matéria viva é constituída, você amplia sua capacidade de interpretar
+                    situações do cotidiano, tomar decisões com mais consciência e compreender o corpo como um sistema em
+                    constante atividade. Que esse estudo sirva como base sólida para os próximos temas que virão, e que, ao
+                    final, você perceba que conhecer a vida por dentro é também uma forma de conhecê-la melhor por fora.
+                </p>
+            </div>
+        </div>
+        <div id="download" class="download-section">
+            <a href="https://drive.google.com/uc?export=download&id=1mmynlBO4T5lc7n2VBRviG_-jCzGilrBy" class="download-btn">
+                Baixar PDF <i class="fas fa-download"></i> <!-- Ícone de download -->
+            </a>
+        </div>
+    </section>
+    <!-- Seção Referências-->
+    <section id="referencias" class="referencias">
+        <!-- Conteúdo -->
+        <div class="conteudo-referencias">
+            <div class="caixa-texto">
+                <h1 class="titulo-referencias">REFERÊNCIAS</h1>
+                <p>ALBERTS, Bruce et al. <strong>Fundamentos da biologia celular</strong>. 4. ed. Porto Alegre: ArtMed, 2017.</p>
+                <p>BRASIL ESCOLA. <strong>Importância da água para o corpo humano</strong>. Disponível em: <a href="https://brasilescola.uol.com.br/biologia/importancia-agua-para-corpo-humano.htm"
+                    target="_blank">https://brasilescola.uol.com.br/biologia/importancia-agua-para-corpo-humano.htm</a> Acesso em: 22 jul. 2020.</p>
+                <p>CASTRO, Nelson Henrique Carvalho de; TAGLIAFERRI, Cleide Morsoletto; TAGLIAFERRI, Túlio de
+                Azevedo. <strong>Biologia</strong>. São Paulo: Scipione, 1989. 3 v.</p>
+                <p>FERREIRA, Lucas Franco. <strong>Development platform functionalized with poly(4-HBA) for use in
+                biological sensors</strong>. 2009. 201 f. Tese (Doutorado em Ciências Exatas e da Terra) – Universidade Federal
+                de Uberlândia, Uberlândia, 2009.</p>
+                <p>INFOESCOLA. <strong>Água nos seres vivos</strong>. Disponível em: <a href="https://www.infoescola.com/bioquimica/agua-nos-seres-vivos/"
+                    target="_blank">https://www.infoescola.com/bioquimica/agua-nos-seres-vivos/</a> Acesso em: 22 jul. 2020.</p>
+                <p>KHAN ACADEMY. <strong>Introduction to macromolecules</strong>. Disponível em: <a href="https://pt.khanacademy.org/science/biology/macromolecules/introduction-to-macromolecues/a/introduction-to-macromolecules"
+                    target="_blank">https://pt.khanacademy.org/science/biology/macromolecules/introduction-to-macromolecues/a/introduction-to-macromolecules</a> Acesso em: 22 jul. 2020.</p>
+                <p>MARTHO, Gilberto Rodrigues; AMABIS, José Mariano. <strong>Fundamentos da biologia moderna</strong>. 4. ed. São
+                Paulo: Moderna, 2006. Volume único.</p>
+                <p>MUNDO EDUCAÇÃO. <strong>A água como solvente</strong>. Disponível em: <a href="https://mundoeducacao.uol.com.br/biologia/a-agua-como-solvente.htm"
+                    target="_blank">https://mundoeducacao.uol.com.br/biologia/a-agua-como-solvente.htm</a> Acesso em: 22 jul. 2020.</p>
+                <p>MUNDO EDUCAÇÃO. <strong>Composição da água</strong>. Disponível em: <a href="https://mundoeducacao.uol.com.br/biologia/composicao-agua.htm"
+                    target="_blank">https://mundoeducacao.uol.com.br/biologia/composicao-agua.htm</a> Acesso em: 22 jul. 2020.</p>
+                <p>MUNDO EDUCAÇÃO. <strong>Funções da água no corpo humano</strong>. Disponível em: <a href="https://mundoeducacao.uol.com.br/biologia/funcoes-agua-no-corpo-humano.htm"
+                    target="_blank">https://mundoeducacao.uol.com.br/biologia/funcoes-agua-no-corpo-humano.htm</a> Acesso em: 22 jul. 2020.</p>
+                <p>NELSON, David L.; COX, Michael M. <strong>Princípios de bioquímica de Lehninger</strong>. 7. ed. Porto Alegre:
+                ArtMed, 2019.</p>
+                <p>TODA BIOLOGIA. <strong>Funções da água</strong>. Disponível em: <a href="https://www.todabiologia.com/citologia/funcoes_agua.htm"
+                    target="_blank">https://www.todabiologia.com/citologia/funcoes_agua.htm</a> Acesso em: 22 jul. 2020.</p>
+                <p>TODA MATÉRIA. <strong>Propriedades da água</strong>. Disponível em: <a href="https://www.todamateria.com.br/propriedades-da-agua/" target="_blank">https://www.todamateria.com.br/propriedades-da-agua/.</a> Acesso em: 22 jul. 2020.</p>
+            </div>
+                
+                 
+        </div>
+    </section>
+    <!-- Seção com os créditos e ficha técnica -->
+    <section class="ficha-tecnica">
+        <p>CASA NOSSA SENHORA DA PAZ – AÇÃO SOCIAL FRANCISCANA, PROVÍNCIA FRANCISCANA DA <br>
+            IMACULADA CONCEIÇÃO DO BRASIL – ORDEM DOS FRADES MENORES</p>
+        <br>
+        <p><strong>GESTOR DO CENTRO DE INOVAÇÃO E SOLUÇÕES EDUCACIONAIS - CISE</strong>
+            Franklin Portela Correia</p>
+    
+        <p><strong>COORDENADORA DO PROGRAMA DE ATUALIZAÇÃO</strong>
+            Flávia Cristina Franco de Lima Rosa</p>
+    
+        <p><strong>SUPERVISORA EDUCACIONAL</strong>
+            Juliane Cristine Batista</p>
+    
+        <p><strong>DESIGNER INSTRUCIONAL</strong>
+            Ana Angelica Miranda Ramos</p>
+    
+        <p><strong>PROJETO GRÁFICO</strong>
+            Andréa Calegari<br>
+            Lucas Ichimaru Testa</p>
+    
+        <p><strong>DIAGRAMADORES</strong>
+            Andréa Calegari<br>
+            Lucas Ichimaru Testa</p>
+    
+        <p><strong>DESENVOLVEDOR</strong>
+            Pedro Vinicius Pires de Oliveira Dias</p>
+    
+        <p><strong>PRODUTOR AUDIOVISUAL</strong>
+            Cassio Martins de Carvalho</p>
+    
+        <p><strong>EDIÇÃO DE VÍDEOS</strong>
+            Diogo Lefort Silva<br>
+            Rafael da Silva Oliveira<br>
+            Hugo Henrique Ferreira da Silva</p>
+    
+        <br><br>
+        <p><span class="paragraforeduzido">
+                © 2026 Universidade São Francisco<br>
+                Avenida São Francisco de Assis, 218<br>
+                CEP 12916-900 – Bragança Paulista/SP
+        </p></span>
+    </section>
+    <footer class="footer">
+        <p>Copyright © de Universidade São Francisco</p>
+        <hr class="footer-divider">
+        <span class="fonte-menor">Todos os direitos reservados. Este ebook ou
+            qualquer parte dele não pode ser reproduzido ou usado em quaisquer formas (eletrônico,
+            gravação, fotocópia, distribuição pela Internet ou outros) sem autorização
+            expressa, por escrito, da <strong>Universidade São Francisco.</strong></span>
+    </footer>
+
+    <script>
+        
+
+        // Seleciona apenas os tabs dentro da div "tema-verde"
+            const temaVerdeContainers = document.querySelectorAll(".tabs-container.tema-verde");
+
+            temaVerdeContainers.forEach(container => {
+                const buttons = container.querySelectorAll(".tab-button");
+                const contents = container.querySelectorAll(".tab-content");
+
+                buttons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        // Remove estado ativo anterior apenas dentro deste container
+                        buttons.forEach(btn => btn.classList.remove("active"));
+                        contents.forEach(content => content.classList.remove("active"));
+
+                        // Adiciona novo estado ativo
+                        button.classList.add("active");
+                        const target = container.querySelector(`#${button.dataset.tab}`);
+                        if (target) target.classList.add("active");
+                    });
+                });
+            });
+
+        // Navbar
+            document.querySelector('.menu-toggle').addEventListener('click', () => {
+                const menu = document.querySelector('.navbar ul');
+                const icons = document.querySelectorAll('.menu-toggle i'); // Seleciona ambos os ícones
+
+                menu.classList.toggle('show'); // Alterna a visibilidade do menu
+
+                // Alterna entre o ícone de abrir (menu) e o ícone de fechar (x)
+                icons[0].style.display = icons[0].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de menu
+                icons[1].style.display = icons[1].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de fechar
+            });
+            // Fechar o menu ao clicar em um link
+            const links = document.querySelectorAll('.navbar ul li a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    const menu = document.querySelector('.navbar ul');
+                    const icons = document.querySelectorAll('.menu-toggle i');
+
+                    // Fecha o menu ao clicar no link
+                    menu.classList.remove('show');
+                    icons[0].style.display = 'block'; // Exibe o ícone de menu
+                    icons[1].style.display = 'none'; // Esconde o ícone de fechar
+                });
+            });
+            // Captura o elemento navbar
+            const navbar = document.querySelector('.navbar');
+
+            // Função que altera a opacidade da navbar
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Quando o scroll for maior que 50px
+                    navbar.style.backgroundColor = 'rgba(159, 67, 190, 0.8)'; // Opacidade 80%
+                } else {
+                    navbar.style.backgroundColor = '#9F43BE'; // Cor original sem transparência
+                }
+            });
+
+            document.querySelectorAll('.slider-quadrinhos').forEach((sliderContainer) => {
+                const slider = sliderContainer.querySelector('.slider');
+                const slides = slider.querySelectorAll('.slide');
+                const dots = sliderContainer.querySelectorAll('.dot');
+                let currentIndex = 0;
+
+                function mostrarSlide(index) {
+                    currentIndex = (index + slides.length) % slides.length;
+                    slides.forEach(slide => slide.classList.remove('ativo'));
+                    dots.forEach(dot => dot.classList.remove('ativo'));
+
+                    slides[currentIndex].classList.add('ativo');
+                    dots[currentIndex].classList.add('ativo');
+                }
+
+                // Atribui os handlers aos botões de seta
+                sliderContainer.querySelector('.seta.esquerda').addEventListener('click', () => {
+                    mostrarSlide(currentIndex - 1);
+                });
+                sliderContainer.querySelector('.seta.direita').addEventListener('click', () => {
+                    mostrarSlide(currentIndex + 1);
+                });
+
+                // Atribui os handlers aos dots
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        mostrarSlide(index);
+                    });
+                });
+
+                // Inicializa
+                mostrarSlide(0);
+            });
+
+            function prepararModal() {
+                document.querySelectorAll('.slider-quadrinhos').forEach((sliderContainer) => {
+                    const imagens = sliderContainer.querySelectorAll('.slide');
+                    imagens.forEach((img, index) => {
+                        img.style.cursor = 'pointer';
+                        img.addEventListener('click', () => {
+                            imagensModal = Array.from(imagens).map(i => i.src);
+                            indiceModal = index;
+                            abrirModal(imagensModal[indiceModal]);
+                        });
+                    });
+                });
+            }
+
+            function abrirModal(src) {
+                document.getElementById('imagem-ampliada').src = src;
+                document.getElementById('modal-imagem').classList.add('ativo');
+                atualizarContador();
+                atualizarPontos();
+            }
+
+            function fecharModal() {
+                document.getElementById('modal-imagem').classList.remove('ativo');
+            }
+
+            function navegarModal(direcao) {
+                indiceModal = (indiceModal + direcao + imagensModal.length) % imagensModal.length;
+                document.getElementById('imagem-ampliada').src = imagensModal[indiceModal];
+                atualizarContador();
+                atualizarPontos();
+            }
+
+            function atualizarContador() {
+                document.getElementById('contador-modal').textContent = `${indiceModal + 1} / ${imagensModal.length}`;
+            }
+
+            function atualizarPontos() {
+                const container = document.getElementById('pontos-modal');
+                container.innerHTML = '';
+                imagensModal.forEach((_, i) => {
+                    const ponto = document.createElement('span');
+                    if (i === indiceModal) ponto.classList.add('ativo');
+                    ponto.addEventListener('click', () => {
+                        indiceModal = i;
+                        document.getElementById('imagem-ampliada').src = imagensModal[i];
+                        atualizarContador();
+                        atualizarPontos();
+                    });
+                    container.appendChild(ponto);
+                });
+            }
+
+            // Cria o container lightbox
+                const lightbox = document.createElement("div");
+                lightbox.classList.add("lightbox");
+                document.body.appendChild(lightbox);
+
+                let scale = 1; // nível de zoom
+                let isDragging = false;
+                let startX, startY, translateX = 0, translateY = 0;
+
+                document.querySelectorAll(".zoomable").forEach(img => {
+                    img.addEventListener("click", () => {
+                        const imgClone = document.createElement("img");
+                        imgClone.src = img.src;
+                        imgClone.alt = img.alt;
+                        imgClone.style.objectFit = "contain"; // garante que abre ajustada
+                        imgClone.style.maxWidth = "100%";
+                        imgClone.style.maxHeight = "100%";
+
+                        lightbox.innerHTML = "";
+                        lightbox.appendChild(imgClone);
+                        lightbox.style.display = "flex";
+                        scale = 1;
+                        translateX = translateY = 0;
+                        updateTransform(imgClone);
+
+                        // Mensagem de dica
+                        const hint = document.createElement("div");
+                        hint.classList.add("lightbox-hint");
+                        hint.innerText = "Use a roda do mouse para dar zoom e arraste para mover";
+                        lightbox.appendChild(hint);
+
+                        // Remove a dica após 4s
+                        setTimeout(() => {
+                            if (hint && hint.parentNode) {
+                                hint.remove();
+                            }
+                        }, 4000);
+
+                        // Zoom com scroll
+                        imgClone.addEventListener("wheel", e => {
+                            e.preventDefault();
+                            scale += e.deltaY * -0.001;
+                            scale = Math.min(Math.max(1, scale), 5); // limite de zoom
+                            updateTransform(imgClone);
+                        });
+
+                        // Arrastar imagem
+                        imgClone.addEventListener("mousedown", e => {
+                            isDragging = true;
+                            startX = e.clientX - translateX;
+                            startY = e.clientY - translateY;
+                            lightbox.style.cursor = "grabbing";
+                        });
+
+                        window.addEventListener("mousemove", e => {
+                            if (!isDragging) return;
+                            translateX = e.clientX - startX;
+                            translateY = e.clientY - startY;
+                            updateTransform(imgClone);
+                        });
+
+                        window.addEventListener("mouseup", () => {
+                            isDragging = false;
+                            lightbox.style.cursor = "grab";
+                        });
+                    });
+                });
+
+                // Fecha clicando fora da imagem
+                lightbox.addEventListener("click", e => {
+                    if (e.target === lightbox) {
+                        lightbox.style.display = "none";
+                    }
+                });
+
+                // Função para aplicar zoom + movimento
+                function updateTransform(img) {
+                    img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                }
+
+            document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
+
+            function initSliderTexto(container) {
+                const slides = container.querySelectorAll('.slide-texto');
+                const indicatorsContainer = container.querySelector('.slider-texto-indicadores');
+
+                indicatorsContainer.innerHTML = ''; // Limpa indicadores anteriores
+
+                // Cria os dots dinamicamente
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot-texto');
+                    dot.onclick = () => mostrarSlide(index);
+                    indicatorsContainer.appendChild(dot);
+                });
+
+                const dots = container.querySelectorAll('.dot-texto');
+                let currentIndex = 0;
+
+                function mostrarSlide(index) {
+                    slides.forEach(slide => slide.classList.remove('ativo'));
+                    dots.forEach(dot => dot.classList.remove('ativo'));
+
+                    currentIndex = (index + slides.length) % slides.length;
+
+                    slides[currentIndex].classList.add('ativo');
+                    dots[currentIndex].classList.add('ativo');
+                }
+
+                // Armazena a função no container para chamadas externas
+                container.mostrarSlideTexto = mostrarSlide;
+                container.getCurrentIndex = () => currentIndex;
+                mostrarSlide(0);
+            }
+
+            // Chamado pelos botões de seta
+            function mudarSlideTexto(button, direcao) {
+                const container = button.closest('.slider-texto-container');
+                const currentIndex = container.getCurrentIndex();
+                container.mostrarSlideTexto(currentIndex + direcao);
+            }
+
+            // Chamado pelos dots (não necessário, mas deixado por compatibilidade)
+            function irParaSlideTexto(dot, index) {
+                const container = dot.closest('.slider-texto-container');
+                container.mostrarSlideTexto(index);
+            }
+
+
+            document.querySelectorAll('.acordeon-header, .acordeon-headerb, .acordeon-headerc, .acordeon-headerd').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const isVisible = content.style.display === 'block';
+                    content.style.display = isVisible ? 'none' : 'block';
+                    const icon = header.querySelector('.acordeon-icon');
+                    if (icon) {
+                        icon.classList.toggle('bx-chevron-up', !isVisible);
+                        icon.classList.toggle('bx-chevron-down', isVisible);
+                    }
+                });
+            });
+            
+
+            document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
+
+            function initSliderTexto(container) {
+                const slides = container.querySelectorAll('.slide-texto');
+                const indicatorsContainer = container.querySelector('.slider-texto-indicadores');
+
+                indicatorsContainer.innerHTML = ''; // Limpa indicadores anteriores
+
+                // Cria os dots dinamicamente
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot-texto');
+                    dot.onclick = () => mostrarSlide(index);
+                    indicatorsContainer.appendChild(dot);
+                });
+
+                const dots = container.querySelectorAll('.dot-texto');
+                let currentIndex = 0;
+
+                function mostrarSlide(index) {
+                    slides.forEach(slide => slide.classList.remove('ativo'));
+                    dots.forEach(dot => dot.classList.remove('ativo'));
+
+                    currentIndex = (index + slides.length) % slides.length;
+
+                    slides[currentIndex].classList.add('ativo');
+                    dots[currentIndex].classList.add('ativo');
+                }
+
+                // Armazena a função no container para chamadas externas
+                container.mostrarSlideTexto = mostrarSlide;
+                container.getCurrentIndex = () => currentIndex;
+                mostrarSlide(0);
+            }
+
+            // Chamado pelos botões de seta
+            function mudarSlideTexto(button, direcao) {
+                const container = button.closest('.slider-texto-container');
+                const currentIndex = container.getCurrentIndex();
+                container.mostrarSlideTexto(currentIndex + direcao);
+            }
+
+            // Chamado pelos dots (não necessário, mas deixado por compatibilidade)
+            function irParaSlideTexto(dot, index) {
+                const container = dot.closest('.slider-texto-container');
+                container.mostrarSlideTexto(index);
+            }
+
+            // Função para abrir o modal com o vídeo
+            function openVideoModal(element) {
+                var videoModal = document.getElementById('videoModal');
+                var iframe = document.getElementById('videoIframe');
+
+                // Obtém o link do vídeo do atributo 'data-video' do ícone de play clicado
+                var videoLink = element.getAttribute("data-video");
+
+                // Define o src do iframe com o link do vídeo
+                iframe.src = videoLink;
+
+                // Exibe o modal
+                videoModal.style.display = "flex";
+            }
+
+            // Função para fechar o modal
+            function closeVideoModal() {
+                var videoModal = document.getElementById('videoModal');
+                var iframe = document.getElementById('videoIframe');
+
+                // Limpa o vídeo (remove a URL para evitar que o vídeo continue tocando)
+                iframe.src = "";
+                videoModal.style.display = "none";  // Fecha o modal
+            }
+
+            // Impede o fechamento do modal quando o clique for dentro do modal de vídeo
+            document.getElementById('videoModal').addEventListener('click', function (event) {
+                // Apenas fecha o modal se o clique for fora da área de conteúdo (ou seja, na área preta)
+                if (event.target === this) {
+                    closeVideoModal();
+                }
+            });
+
+            
+    </script>
+</body>
+</html>
